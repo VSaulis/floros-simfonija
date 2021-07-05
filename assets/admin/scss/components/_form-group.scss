@@ -1,0 +1,13 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+
+  label {
+    font-size: 13px;
+    color: $color-text-primary;
+    font-weight: $font-weight-medium;
+    margin-bottom: 5px;
+  }
+}
+

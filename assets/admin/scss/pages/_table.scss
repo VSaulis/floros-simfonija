@@ -1,0 +1,15 @@
+.table-page {
+  display: flex;
+
+  .actions-container {
+    .filter-toggle {
+      margin-right: 5px;
+    }
+  }
+
+  &.filter-visible {
+    .table-filter {
+      display: flex;
+    }
+  }
+}

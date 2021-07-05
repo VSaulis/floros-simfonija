@@ -1,0 +1,33 @@
+.button {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  outline: none;
+  @include font-style($font-family-base, $font-weight-semi-bold, 0.5px);
+  @include button-size(10px, 15px, 11px);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+
+  &-primary {
+    @include button-variant($color-white, $color-primary, $color-primary);
+  }
+
+  &-secondary {
+    @include button-variant($color-white, $color-text-secondary, $color-text-secondary);
+  }
+
+  &-outline {
+    &-primary {
+      @include button-outline-variant($color-primary, $color-primary);
+    }
+
+    &-secondary {
+      @include button-outline-variant($color-text-secondary, $color-text-secondary);
+    }
+  }
+}

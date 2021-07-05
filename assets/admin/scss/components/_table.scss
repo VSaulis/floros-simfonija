@@ -1,0 +1,94 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  position: relative;
+  border: 1px solid $color-table-border;
+
+  th {
+    font-size: 10px;
+    background-color: $color-white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    white-space: nowrap;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid $color-table-border;
+
+    &.extra-small {
+      width: 75px;
+    }
+
+    &.small {
+      width: 120px;
+    }
+
+    &.medium {
+      width: 130px;
+    }
+
+    &.large {
+      width: 160px;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: $color-light-grey;
+    }
+  }
+
+  td {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 10px;
+    white-space: nowrap;
+    height: 35px;
+    color: $color-text-primary;
+    border-bottom: 1px solid $color-table-border;
+
+    &.disabled {
+      color: $color-text-secondary;
+    }
+
+    &.success {
+      color: $color-success;
+    }
+  }
+
+  div.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .action {
+      text-decoration: none;
+
+      &:first-of-type {
+        margin-right: 5px;
+      }
+
+      i {
+        font-size: 18px;
+        color: $color-text-secondary;
+        display: block;
+      }
+    }
+
+  }
+
+  .highlighted {
+    font-weight: 700;
+    background-color: $color-light-grey;
+  }
+
+  .header {
+    border-right: 1px solid $color-table-border;
+    background-color: $color-light-grey;
+  }
+}

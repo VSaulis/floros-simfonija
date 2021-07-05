@@ -1,0 +1,13 @@
+{% extends 'admin/layouts/sidebar-layout.html.twig' %}
+{% set sidebar_active = 'restaurants' %}
+
+{% block content %}
+    <div class="content">
+        <div class="header-container">
+            <h1 class="title">{{ 'admin.titles.edit_restaurant' | trans }}</h1>
+        </div>
+        <div class="fixed-content">
+            {% include 'admin/pages/restaurant/form.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

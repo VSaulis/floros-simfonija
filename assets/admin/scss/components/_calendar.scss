@@ -1,0 +1,82 @@
+.calendar {
+  width: 100%;
+
+  .weekdays {
+    display: grid;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+    grid-template-columns: repeat(7, 1fr);
+    margin-right: 4px;
+    border-top: 1px solid $color-table-border;
+    border-left: 1px solid $color-table-border;
+
+    .header {
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-right: 1px solid $color-table-border;
+
+      span {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color-text-primary;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .days {
+    display: grid;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+    grid-template-columns: repeat(7, 1fr);
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+    border: 1px solid $color-table-border;
+    border-right: none;
+
+    .date {
+      padding: 10px 0;
+      display: flex;
+      border-bottom: 1px solid $color-table-border;
+      border-right: 1px solid $color-table-border;
+      aspect-ratio: 1.2;
+      flex-direction: column;
+      overflow: hidden;
+
+      &.disabled {
+        background-color: $color-light-grey;
+      }
+
+      .day {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0 10px;
+
+        span {
+          font-size: 13px;
+          font-weight: 500;
+          white-space: nowrap;
+          color: $color-text-secondary;
+        }
+      }
+
+      .record {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        margin-bottom: 2px;
+
+        span {
+          font-size: 13px;
+          color: $color-text-primary;
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+  }
+}

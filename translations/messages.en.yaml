@@ -1,0 +1,21 @@
+admin:
+    titles:
+        login: Login
+        logout: Logout
+        restaurants: Restaurants
+        add_restaurant: Add restaurant
+        edit_restaurant: Edit restaurant
+        delete_restaurant: Delete restaurant
+
+    buttons:
+        login: Login
+        add_restaurant: Add restaurant
+        edit_restaurant: Edit restaurant
+        save: Save
+        delete: Delete
+
+    labels:
+        created: Created
+        actions: Actions
+        email: Email
+        password: Password

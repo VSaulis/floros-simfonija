@@ -1,0 +1,21 @@
+admin:
+    titles:
+        login: Prisijungimas
+        logout: Atsijungti
+        restaurants: Restoranai
+        add_restaurant: Pridėti restoraną
+        edit_restaurant: Redaguoti restoraną
+        delete_restaurant: Ištrinti restoraną
+
+    buttons:
+        login: Prisijungti
+        add_restaurant: Pridėti restoraną
+        edit_restaurant: Redaguoti restoraną
+        save: Išsaugoti
+        delete: Ištrinti
+
+    labels:
+        created: Sukūrimo data
+        actions: Veiksmai
+        email: El. paštas
+        password: Slaptažodis

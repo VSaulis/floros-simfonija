@@ -1,0 +1,15 @@
+.calendar-page {
+  display: flex;
+
+  .actions-container {
+    .filter-toggle {
+      margin-left: 20px;
+    }
+  }
+
+  &.filter-visible {
+    .calendar-filter {
+      display: flex;
+    }
+  }
+}

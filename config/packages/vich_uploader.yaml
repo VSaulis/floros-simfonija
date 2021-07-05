@@ -1,0 +1,19 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        restaurants_photos:
+            uri_prefix:         '%restaurants_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%restaurants_photos_path%'
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     true
+            delete_on_update:   true
+            delete_on_remove:   true
+
+        menu_items_photos:
+            uri_prefix: '%menu_items_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%menu_items_photos_path%'
+            namer: vich_uploader.namer_uniqid
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true

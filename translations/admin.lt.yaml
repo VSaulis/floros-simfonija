@@ -1,0 +1,24 @@
+labels:
+    email: El. paštas
+    password: Slaptažodis
+    address: Adresas
+    phone: Tel. numeris
+    translations: Vertimai
+    id: Id
+    created: Sukurta
+    updated: Atnaujinta
+    photos: Nuotraukos
+    photo: Nuotrauka
+    title: Pavadinimas
+    price: Kaina
+
+titles:
+    login: Prisijungimas
+    locations: Lokacijos
+    products: Produktai
+    rooms: Kambariai
+    products_categories: Produktų kategorijos
+    admin: Administratoriaus panelė
+
+buttons:
+    login: Prisijungti

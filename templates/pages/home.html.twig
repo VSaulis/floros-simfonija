@@ -1,0 +1,16 @@
+{% extends 'layouts/header-layout.html.twig' %}
+{% set title = 'titles.home' | trans %}
+{% set navigation_active = 'home' %}
+
+{% block main %}
+    <div class="home-page">
+        <div class="locations">
+            {% for location in locations %}
+                <a href="{{ path('location about us', {id: location.id}) }}" class="location">
+                    <img class="image" alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.first(), 'file') }}"/>
+                    <h3 class="title">{{ location.title(app.request.locale) }}</h3>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

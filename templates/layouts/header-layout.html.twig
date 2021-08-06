@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="header-layout">
+        {% include 'includes/header.html.twig' %}
+        {% block main %}{% endblock %}
+    </main>
+{% endblock %}

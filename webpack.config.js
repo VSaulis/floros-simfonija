@@ -5,7 +5,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) Encore.configureRuntimeEnvironment
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-    .addEntry('admin/app', './assets/admin/app.js')
+    .addEntry('app', './assets/app.js')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()

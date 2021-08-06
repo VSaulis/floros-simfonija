@@ -1,0 +1,23 @@
+.locales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .locale {
+    margin-right: 15px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    .locale-item {
+      font-size: 11px;
+      color: $color-white;
+      display: block;
+
+      &.active, &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

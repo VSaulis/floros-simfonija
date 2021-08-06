@@ -1,0 +1,11 @@
+{% if breadcrumbs is defined %}
+    <div class="breadcrumbs">
+        {% for breadcrumb in breadcrumbs %}
+            {% if breadcrumb.link is defined %}
+                <div class="breadcrumb"><a class="breadcrumb-link" href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a></div>
+            {% else %}
+                <div class="breadcrumb active"><span class="breadcrumb-active-link">{{ breadcrumb.title }}</span></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

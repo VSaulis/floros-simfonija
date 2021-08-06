@@ -1,0 +1,13 @@
+labels:
+    email: Email
+    password: Password
+
+titles:
+    login: Login
+    locations: Locations
+    products: Products
+    products_categories: Products categories
+    admin: Admin
+
+buttons:
+    login: Login

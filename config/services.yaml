@@ -1,6 +1,7 @@
 parameters:
-    restaurants_photos_path: /uploads/restaurants
-    menu_items_photos_path: /uploads/menu-items
+    locations_photos_path: /uploads/locations
+    products_photos_path: /uploads/products
+    rooms_photos_path: /uploads/rooms
     locale: 'lt'
 
 services:
@@ -15,3 +16,15 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
             - '../src/Tests/'
+
+    App\Controller\Admin\LocationController:
+        arguments:
+            - '%locations_photos_path%'
+
+    App\Controller\Admin\ProductController:
+        arguments:
+            - '%products_photos_path%'
+
+    App\Controller\Admin\RoomController:
+        arguments:
+            - '%rooms_photos_path%'

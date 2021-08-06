@@ -2,92 +2,160 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_aside.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_calendar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_color.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_container.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_dates-list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_form-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_input.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_scrollbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/components/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_calendar-filter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_table-filter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/layouts/_company-sidebar-layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/layouts/_side-image-layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/layouts/_sidebar-layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/mixins/_button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/mixins/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/pages/_calendar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/pages/_login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/pages/_table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/reset/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/variables/_colors.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/variables/_font-families.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/variables/_font-sizes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/admin/scss/variables/_font-weights.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/RestaurantsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MenuItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MenuItemCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MenuItemCategoryTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MenuItemPhoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/MenuItemTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Restaurant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/RestaurantPhoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/RestaurantTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/RegistrationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/RestaurantType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/MenuItemCategoryRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/MenuItemRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/RestaurantRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/Admin/LoginFormAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Util/DateUtils.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Util/PriceUtils.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/includes/paging.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/includes/sidebar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/layouts/side-image-layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/layouts/sidebar-layout.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/restaurant/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/restaurant/delete.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/restaurant/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/restaurant/form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/restaurant/list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/pages/security/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/hero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/restaurant1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/restaurant2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/restaurant3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/components/_container.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_breadcrumbs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_hero.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_locales.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_social.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/layouts/_page-layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_contacts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_home.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/variables/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/variables/_font-families.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Constant/Locales.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/LocationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/RoomController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/LocationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/LocationPhoto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/LocationTranslation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/RoomPhoto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/RoomTranslation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/LocationPhotoType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/MessageType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/ProductCategoryTranslationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/ProductPhotoType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/ProductTranslationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/RoomPhotoType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/RoomTranslationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Message.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/RoomRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Util/BreadcrumbsHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/breadcrumbs.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/footer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/header.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/hero.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/locales.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/navigation.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/social.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layouts/header-layout.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layouts/page-layout.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/about-us.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/contacts.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/gallery.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/menu.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/admin.en.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/admin.lt.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/validators.en.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/validators.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/floros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/floros.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_aside.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_checkbox.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_checkbox.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_dates-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_form-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_input.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_scrollbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_scrollbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_table.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/components/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/features/_calendar-filter.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/features/_sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/features/_table-filter.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/layouts/_company-sidebar-layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/layouts/_side-image-layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/layouts/_sidebar-layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/mixins/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/mixins/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/mixins/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/mixins/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/pages/_calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/pages/_login.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/pages/_table.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/reset/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/reset/_base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/variables/_colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/variables/_font-families.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/variables/_font-sizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/variables/_font-sizes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/scss/variables/_font-weights.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/variables/_font-weights.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210705221344.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RestaurantsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuItemCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuItemCategoryTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategoryTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuItemPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPhoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuItemTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Restaurant.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RestaurantPhoto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RestaurantTranslation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/RegistrationType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/RestaurantType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/LocationTranslationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MenuItemCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/MenuItemRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RestaurantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LocationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Admin/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Admin/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/includes/paging.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/includes/sidebar.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/layouts/side-image-layout.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/layouts/sidebar-layout.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/restaurant/add.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/restaurant/delete.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/restaurant/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/restaurant/form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/restaurant/list.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/security/login.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.en.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -230,6 +298,9 @@
       <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
       <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
     </include_path>
   </component>
   <component name="ProjectId" id="1uuck3k1iKAxa5oVGngUT07NsNS" />
@@ -241,29 +312,36 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form/Type" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SCSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Form\Type" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Controller\Admin" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates\admin\pages" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates\admin" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\js" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\images" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\fonts" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\css" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\scss" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Security\Admin" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Controller\Admin" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\admin" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Controller" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates\client\pages" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Controller\Client" />
     </key>
   </component>
   <component name="RunManager">
@@ -280,11 +358,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625519053617</updated>
-      <workItem from="1625519054740" duration="7640000" />
+      <workItem from="1625519054740" duration="7821000" />
+      <workItem from="1625562380361" duration="23728000" />
+      <workItem from="1625899270989" duration="19971000" />
+      <workItem from="1628254345069" duration="12560000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

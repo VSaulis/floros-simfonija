@@ -2,30 +2,19 @@
 
 namespace App\Controller\Admin;
 
-use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class SecurityController extends AbstractController
 {
-    private $entityManager;
-    private $userRepository;
-    private $passwordEncoder;
+    private $translator;
 
-    public function __construct
-    (
-        EntityManagerInterface $entityManager,
-        UserRepository $userRepository,
-        UserPasswordEncoderInterface $passwordEncoder
-    )
+    public function __construct(TranslatorInterface  $translator)
     {
-        $this->passwordEncoder = $passwordEncoder;
-        $this->userRepository = $userRepository;
-        $this->entityManager = $entityManager;
+        $this->translator = $translator;
     }
 
     /**
@@ -35,12 +24,18 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        $error = $authenticationUtils->getLastAuthenticationError();
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('admin/pages/security/login.html.twig', array(
-            'last_username' => $lastUsername,
-            'error' => $error
-        ));
+        return $this->render('@EasyAdmin/page/login.html.twig', [
+            'error' => $authenticationUtils->getLastAuthenticationError(),
+            'last_username' => $authenticationUtils->getLastUsername(),
+            'translation_domain' => 'admin',
+            'page_title' => $this->translator->trans('titles.login', [], 'admin'),
+            'csrf_token_intention' => 'authenticate',
+            'target_path' => $this->generateUrl('admin'),
+            'username_label' => 'labels.email',
+            'password_label' => 'labels.password',
+            'sign_in_label' => 'buttons.login',
+            'username_parameter' => 'email',
+            'password_parameter' => 'password',
+        ]);
     }
 }

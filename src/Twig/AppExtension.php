@@ -2,6 +2,7 @@
 
 namespace App\Twig;
 
+use App\Repository\LocationRepository;
 use App\Util\PriceUtils;
 use DateTime;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,16 +14,19 @@ use Twig\TwigFunction;
 class AppExtension extends AbstractExtension
 {
     private $router;
+    private $locationRepository;
 
-    public function __construct(UrlGeneratorInterface $router)
+    public function __construct(UrlGeneratorInterface $router, LocationRepository $locationRepository)
     {
+        $this->locationRepository = $locationRepository;
         $this->router = $router;
     }
 
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('getPagingRoute', [$this, 'getPagingRoute'])
+            new TwigFunction('getPagingRoute', [$this, 'getPagingRoute']),
+            new TwigFunction('getAllLocations', [$this, 'getAllLocations'])
         ];
     }
 
@@ -57,5 +61,10 @@ class AppExtension extends AbstractExtension
         $params = array_merge($request->attributes->get('_route_params'), $request->query->all());
         $params['page'] = $page;
         return $this->router->generate($request->get('_route'), $params);
+    }
+
+    public function getAllLocations(): array
+    {
+        return $this->locationRepository->findAll();
     }
 }

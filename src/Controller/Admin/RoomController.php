@@ -10,12 +10,16 @@ use App\Form\Type\RoomTranslationType;
 use App\Util\DateUtils;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
 class RoomController extends AbstractCrudController
 {
@@ -70,6 +74,9 @@ class RoomController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield NumberField::new('longitude', 'labels.longitude')->onlyOnForms();
+        yield NumberField::new('latitude', 'labels.latitude')->onlyOnForms();
+
         yield MoneyField::new('price', 'labels.price')
             ->setStoredAsCents(false)
             ->setCurrency('EUR');
@@ -85,6 +92,17 @@ class RoomController extends AbstractCrudController
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
+
+        yield AssociationField::new('location', 'labels.location');
+
+        yield AssociationField::new('category', 'labels.category');
+
+        yield AssociationField::new('perks', 'labels.perks')
+            ->onlyOnForms();
+
+        yield UrlField::new('orderUrl', 'labels.order_url')->onlyOnForms();
+
+        yield IntegerField::new('peopleCount', 'labels.people_count');
 
         yield CollectionField::new('translations', 'labels.translations')
             ->onlyOnForms()

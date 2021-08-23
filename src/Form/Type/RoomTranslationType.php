@@ -16,6 +16,7 @@ class RoomTranslationType extends AbstractType
         $builder
             ->add('locale', TextType::class, ['disabled' => true])
             ->add('title', TextType::class)
+            ->add('address', TextType::class)
             ->add('description', TextareaType::class);
     }
 

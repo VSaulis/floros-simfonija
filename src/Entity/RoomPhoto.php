@@ -35,6 +35,11 @@ class RoomPhoto
     private $fileName;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $featured;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $fileSize;
@@ -54,6 +59,11 @@ class RoomPhoto
      * @ORM\Column(type="datetime")
      */
     private $created;
+
+    public function __construct()
+    {
+        $this->featured = false;
+    }
 
     /**
      * @ORM\PrePersist
@@ -115,6 +125,16 @@ class RoomPhoto
     public function setRoom($room): void
     {
         $this->room = $room;
+    }
+
+    public function getFeatured()
+    {
+        return $this->featured;
+    }
+
+    public function setFeatured($featured): void
+    {
+        $this->featured = $featured;
     }
 
     public function getUpdated()

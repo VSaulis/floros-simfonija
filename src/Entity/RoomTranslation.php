@@ -34,6 +34,12 @@ class RoomTranslation
 
     /**
      * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $address;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="text")
      */
     private $description;
@@ -113,6 +119,16 @@ class RoomTranslation
     public function setLocale($locale): void
     {
         $this->locale = $locale;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress($address): void
+    {
+        $this->address = $address;
     }
 
     public function getUpdated()

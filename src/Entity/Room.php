@@ -22,6 +22,18 @@ class Room
     private $id;
 
     /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="decimal", precision=10, scale=7)
+     */
+    private $longitude;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="decimal", precision=10, scale=7)
+     */
+    private $latitude;
+
+    /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
      * @Assert\NotBlank(message="field_is_required")
      * @Assert\Regex(
@@ -30,6 +42,13 @@ class Room
      * )
      */
     private $price;
+
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="field_is_required")
+     * @Assert\Url(message="field_is_invalid")
+     */
+    private $orderUrl;
 
     /**
      * @ORM\OneToMany(
@@ -52,6 +71,34 @@ class Room
     private $photos;
 
     /**
+     * @ORM\ManyToMany(
+     *     targetEntity="App\Entity\RoomPerk",
+     *     inversedBy="rooms",
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $perks;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="rooms")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $location;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\ManyToOne(targetEntity="App\Entity\RoomCategory", inversedBy="rooms")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $peopleCount;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated;
@@ -65,6 +112,7 @@ class Room
     {
         $this->translations = new ArrayCollection();
         $this->photos = new ArrayCollection();
+        $this->perks = new ArrayCollection();
     }
 
     /**
@@ -98,6 +146,16 @@ class Room
         $this->price = $price;
     }
 
+    public function getOrderUrl()
+    {
+        return $this->orderUrl;
+    }
+
+    public function setOrderUrl($orderUrl): void
+    {
+        $this->orderUrl = $orderUrl;
+    }
+
     public function getTitle(string $locale): string
     {
         $translation = $this->getTranslationByLocale($locale);
@@ -108,6 +166,12 @@ class Room
     {
         $translation = $this->getTranslationByLocale($locale);
         return $translation ? $translation->getDescription() : "";
+    }
+
+    public function getAddress(string $locale): string
+    {
+        $translation = $this->getTranslationByLocale($locale);
+        return $translation ? $translation->getAddress() : "";
     }
 
     public function getTranslationByLocale(string $locale): RoomTranslation
@@ -159,6 +223,92 @@ class Room
     public function removePhoto(RoomPhoto $photo)
     {
         $this->photos->removeElement($photo);
+    }
+
+    public function getFeaturedPhoto()
+    {
+        $predicate = function (RoomPhoto $photo) {
+            return $photo->getFeatured() == true;
+        };
+
+        $featuredPhoto = $this->photos->filter($predicate)->first();
+        return $featuredPhoto ? $featuredPhoto :  $this->photos->first();
+    }
+
+    public function getPerks(): Collection
+    {
+        return $this->perks;
+    }
+
+    public function setPerks($perks): void
+    {
+        $this->perks = $perks;
+    }
+
+    public function addPerk(RoomPerk $perk)
+    {
+        if (!$this->perks->contains($perk)) {
+            $perk->addRoom($this);
+            $this->perks[] = $perk;
+        }
+    }
+
+    public function removePerk(RoomPerk $perk)
+    {
+        if ($this->perks->contains($perk)) {
+            $perk->removeRoom($this);
+            $this->perks->removeElement($perk);
+        }
+    }
+
+    public function getPeopleCount()
+    {
+        return $this->peopleCount;
+    }
+
+    public function setPeopleCount($peopleCount): void
+    {
+        $this->peopleCount = $peopleCount;
+    }
+
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    public function setLocation($location): void
+    {
+        $this->location = $location;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category): void
+    {
+        $this->category = $category;
+    }
+
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude($longitude): void
+    {
+        $this->longitude = $longitude;
+    }
+
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude($latitude): void
+    {
+        $this->latitude = $latitude;
     }
 
     public function getUpdated()

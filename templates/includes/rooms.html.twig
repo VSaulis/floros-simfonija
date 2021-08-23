@@ -1,0 +1,19 @@
+<div class="rooms">
+    {% for room in rooms %}
+        <div class="room">
+            <a href="{{ path('location room', {id: location.id, roomId: room.id, categoryId: room.category.id}) }}" class="link"></a>
+            <img class="image" alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}"/>
+            <div class="details">
+                <h3 class="details-title">{{ room.title(app.request.locale) }}</h3>
+                <p class="details-description">{{ room.description(app.request.locale) }}</p>
+                <div class="details-footer">
+                    <span class="price">{{ room.price | priceFormat }}</span>
+                    <div class="people-count-container">
+                        <i class="fa fa-users"></i>
+                        <span class="people-count">{{ room.peopleCount }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

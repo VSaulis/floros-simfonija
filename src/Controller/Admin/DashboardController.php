@@ -2,10 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Gallery;
 use App\Entity\Product;
 use App\Entity\ProductCategory;
 use App\Entity\Location;
 use App\Entity\Room;
+use App\Entity\RoomCategory;
+use App\Entity\RoomPerk;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -56,5 +59,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('titles.products_categories', 'fas fa-th-list', ProductCategory::class)->setDefaultSort(['created' => 'DESC']);
         yield MenuItem::linkToCrud('titles.products', 'fas fa-th-list', Product::class)->setDefaultSort(['created' => 'DESC']);
         yield MenuItem::linkToCrud('titles.rooms', 'fas fa-th-list', Room::class)->setDefaultSort(['created' => 'DESC']);
+        yield MenuItem::linkToCrud('titles.perks', 'fas fa-th-list', RoomPerk::class)->setDefaultSort(['created' => 'DESC']);
+        yield MenuItem::linkToCrud('titles.galleries', 'fas fa-th-list', Gallery::class)->setDefaultSort(['created' => 'DESC']);
+        yield MenuItem::linkToCrud('titles.rooms_categories', 'fas fa-th-list', RoomCategory::class)->setDefaultSort(['created' => 'DESC']);
     }
 }

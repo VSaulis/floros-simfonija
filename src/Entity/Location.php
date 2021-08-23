@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Constant\Locales;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -73,6 +74,28 @@ class Location
     private $products;
 
     /**
+     * @Assert\Valid
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Room",
+     *     mappedBy="location",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $rooms;
+
+    /**
+     * @Assert\Valid
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Gallery",
+     *     mappedBy="location",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $galleries;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated;
@@ -87,11 +110,13 @@ class Location
         $this->translations = new ArrayCollection();
         $this->photos = new ArrayCollection();
         $this->products = new ArrayCollection();
+        $this->rooms = new ArrayCollection();
+        $this->galleries = new ArrayCollection();
     }
 
     public function __toString(): string
     {
-        return (string) $this->id;
+        return (string) $this->getTitle(Locales::LT);
     }
 
     /**
@@ -210,6 +235,26 @@ class Location
     public function setProducts(ArrayCollection $products): void
     {
         $this->products = $products;
+    }
+
+    public function getRooms(): Collection
+    {
+        return $this->rooms;
+    }
+
+    public function setRooms($rooms): void
+    {
+        $this->rooms = $rooms;
+    }
+
+    public function getGalleries(): Collection
+    {
+        return $this->galleries;
+    }
+
+    public function setGalleries($galleries): void
+    {
+        $this->galleries = $galleries;
     }
 
     public function getUpdated()

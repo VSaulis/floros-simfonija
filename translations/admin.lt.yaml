@@ -11,6 +11,14 @@ labels:
     photo: Nuotrauka
     title: Pavadinimas
     price: Kaina
+    perks: Privalumai
+    order_url: Užsakymo nuoroda
+    people_count: Žmonių skaičius
+    featured: Iškeltas
+    location: Lokacija
+    category: Kategorija
+    longitude: Ilguma
+    latitude: Platuma
 
 titles:
     login: Prisijungimas
@@ -19,6 +27,9 @@ titles:
     rooms: Kambariai
     products_categories: Produktų kategorijos
     admin: Administratoriaus panelė
+    perks: Privalumai
+    galleries: Galerijos
+    rooms_categories: Kambarių kategorijos
 
 buttons:
     login: Prisijungti

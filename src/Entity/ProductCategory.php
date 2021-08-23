@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Constant\Locales;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -70,7 +71,7 @@ class ProductCategory
 
     public function __toString(): string
     {
-        return (string) $this->id;
+        return (string) $this->getTitle(Locales::LT);
     }
 
     /**

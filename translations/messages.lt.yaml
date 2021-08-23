@@ -4,13 +4,23 @@ navigation:
     menu: Meniu
     contacts: Kontaktai
     gallery: Galerija
+    galleries: Galerijos
+    rooms: Kambariai
 
 titles:
     home: Pagrindinis puslapis
     about_us: Apie mus
     menu: Meniu
     gallery: Galerija
+    galleries: Galerijos
     contacts: Kontaktai
+    rooms: Kambariai
+    similar_rooms: Panašūs kambariai
+    perks: Privalumai
+    location: Lokacija
+
+room:
+    book: Užsakyti
 
 header:
     email: El. paštas

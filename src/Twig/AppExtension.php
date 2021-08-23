@@ -3,6 +3,7 @@
 namespace App\Twig;
 
 use App\Repository\LocationRepository;
+use App\Repository\RoomCategoryRepository;
 use App\Util\PriceUtils;
 use DateTime;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,9 +16,11 @@ class AppExtension extends AbstractExtension
 {
     private $router;
     private $locationRepository;
+    private $roomCategoryRepository;
 
-    public function __construct(UrlGeneratorInterface $router, LocationRepository $locationRepository)
+    public function __construct(UrlGeneratorInterface $router, LocationRepository $locationRepository, RoomCategoryRepository $roomCategoryRepository)
     {
+        $this->roomCategoryRepository = $roomCategoryRepository;
         $this->locationRepository = $locationRepository;
         $this->router = $router;
     }
@@ -26,7 +29,8 @@ class AppExtension extends AbstractExtension
     {
         return [
             new TwigFunction('getPagingRoute', [$this, 'getPagingRoute']),
-            new TwigFunction('getAllLocations', [$this, 'getAllLocations'])
+            new TwigFunction('getAllLocations', [$this, 'getAllLocations']),
+            new TwigFunction('getAllRoomCategories', [$this, 'getAllRoomCategories'])
         ];
     }
 
@@ -66,5 +70,10 @@ class AppExtension extends AbstractExtension
     public function getAllLocations(): array
     {
         return $this->locationRepository->findAll();
+    }
+
+    public function getAllRoomCategories(): array
+    {
+        return $this->roomCategoryRepository->findAll();
     }
 }

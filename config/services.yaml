@@ -2,6 +2,7 @@ parameters:
     locations_photos_path: /uploads/locations
     products_photos_path: /uploads/products
     rooms_photos_path: /uploads/rooms
+    galleries_photos_path: /uploads/galleries
     locale: 'lt'
 
 services:
@@ -28,3 +29,7 @@ services:
     App\Controller\Admin\RoomController:
         arguments:
             - '%rooms_photos_path%'
+
+    App\Controller\Admin\GalleryController:
+        arguments:
+            - '%galleries_photos_path%'

@@ -1,114 +1,114 @@
 .contacts-page {
-  .container {
-    display: flex;
-    align-items: flex-start;
+    .container {
+        display: flex;
+        align-items: flex-start;
 
-    .content {
-      flex: 1;
-      margin-right: 40px;
+        .content {
+            flex: 1;
+            margin-right: 40px;
 
-      .title {
-        font-size: 30px;
-        font-family: $font-family-headers;
-        font-weight: $font-weight-bold;
-        color: $color-text-tertiary;
-        display: block;
-        margin-bottom: 20px;
-      }
-
-      .description {
-        font-size: 13px;
-        line-height: 24px;
-        padding-bottom: 10px;
-        color: $color-text-quaternary;
-        display: block;
-        margin-bottom: 40px;
-      }
-
-      .contacts-form {
-
-        .button-row {
-          margin-top: 40px;
-        }
-
-        .row {
-          display: flex;
-          align-items: stretch;
-          justify-content: space-between;
-          margin-bottom: 20px;
-
-          &:last-of-type {
-            margin-bottom: 0;
-          }
-        }
-
-        .form-group {
-          flex: 1;
-          margin-right: 30px;
-
-          &:last-of-type {
-            margin-right: 0;
-          }
-
-          label {
-            display: none;
-          }
-
-          input, textarea {
-            border: 1px solid $color-grey;
-            background-color: $color-light-grey;
-            padding: 0 20px;
-            height: 50px;
-            width: 100%;
-            color: $color-black;
-            line-height: 50px;
-            font-size: 12px;
-            display: block;
-
-            &:focus {
-              background-color: $color-white;
+            .title {
+                font-size: 30px;
+                font-family: $font-family-headers;
+                font-weight: $font-weight-bold;
+                color: $color-text-tertiary;
+                display: block;
+                margin-bottom: 20px;
             }
-          }
 
-          textarea {
-            height: 150px;
-            resize: none;
-          }
+            .description {
+                font-size: 13px;
+                line-height: 24px;
+                padding-bottom: 10px;
+                color: $color-text-quaternary;
+                display: block;
+                margin-bottom: 40px;
+            }
+
+            .contacts-form {
+
+                .button-row {
+                    margin-top: 40px;
+                }
+
+                .row {
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .form-group {
+                    flex: 1;
+                    margin-right: 30px;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    label {
+                        display: none;
+                    }
+
+                    input, textarea {
+                        border: 1px solid $color-grey;
+                        background-color: $color-light-grey;
+                        padding: 0 20px;
+                        height: 50px;
+                        width: 100%;
+                        color: $color-black;
+                        line-height: 50px;
+                        font-size: 12px;
+                        display: block;
+
+                        &:focus {
+                            background-color: $color-white;
+                        }
+                    }
+
+                    textarea {
+                        height: 150px;
+                        resize: none;
+                    }
+                }
+            }
         }
-      }
+
+        .hours {
+            width: 480px;
+            background-color: lighten($color-dark-brown, 5%);
+            padding: 30px;
+
+            .details {
+                background-color: $color-dark-brown;
+                border: 1px dashed rgba($color-white, 0.2);
+                padding: 20px;
+
+                .caption {
+                    font-family: $font-family-headers;
+                    color: $color-primary;
+                    font-style: italic;
+                    font-size: 18px;
+                    font-weight: $font-weight-medium;
+                    margin-bottom: 10px;
+                    display: block;
+                    text-align: center;
+                }
+
+                .title {
+                    font-family: $font-family-headers;
+                    color: $color-white;
+                    font-size: 30px;
+                    font-weight: $font-weight-medium;
+                    margin-bottom: 30px;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
     }
-
-    .hours {
-      width: 480px;
-      background-color: lighten($color-dark-brown, 5%);
-      padding: 30px;
-
-      .details {
-        background-color: $color-dark-brown;
-        border: 1px dashed rgba($color-white, 0.2);
-        padding: 20px;
-
-        .caption {
-          font-family: $font-family-headers;
-          color: $color-primary;
-          font-style: italic;
-          font-size: 18px;
-          font-weight: $font-weight-medium;
-          margin-bottom: 10px;
-          display: block;
-          text-align: center;
-        }
-
-        .title {
-          font-family: $font-family-headers;
-          color: $color-white;
-          font-size: 30px;
-          font-weight: $font-weight-medium;
-          margin-bottom: 30px;
-          display: block;
-          text-align: center;
-        }
-      }
-    }
-  }
 }

@@ -1,0 +1,16 @@
+.slideshow {
+    .swiper-pagination-bullet-active {
+        background-color: $color-primary;
+    }
+
+    .swiper-slide {
+        height: 400px;
+        width: auto;
+
+        img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+    }
+}

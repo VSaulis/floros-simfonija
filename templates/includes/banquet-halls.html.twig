@@ -1,0 +1,18 @@
+<div class="banquet-halls">
+    {% for banquetHall in banquetHalls %}
+        <div class="banquet-hall">
+            <div class="images">
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(banquetHall.featuredPhoto, 'file') }}" class="image"/>
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(banquetHall.photos.get(1), 'file') }}" class="image"/>
+            </div>
+            <div class="details">
+                <h3 class="details-title">{{ banquetHall.title(app.request.locale) }}</h3>
+                <span class="details-date">{{ banquetHall.created | dateFormat }}</span>
+                <p class="details-description">{{ banquetHall.description(app.request.locale) }}</p>
+                <div class="actions">
+                    <a href="{{ path('location banquet hall', {id: location.id, banquetHallId: banquetHall.id}) }}" class="button button-primary">{{ 'banquet_halls.view' | trans }}</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

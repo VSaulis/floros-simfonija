@@ -1,0 +1,13 @@
+<div class="about-us-widget">
+    <div class="about-us-widget-content">
+        <div class="details">
+            <span class="details-caption">{{ 'about_us.our_story' | trans }}</span>
+            <h3 class="details-title">{{ 'about_us.few_words_about_us' | trans }}</h3>
+            <p class="details-description">{{ location.description(app.request.locale) }}</p>
+        </div>
+        <div class="images">
+            <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.featuredPhoto, 'file') }}" class="image"/>
+            <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.get(1), 'file') }}" class="image"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = 'titles.galleries' | trans %}
+{% set navigation_active = 'galleries' %}
+
+{% block main %}
+    <div class="galleries-page">
+        <div class="container">
+            {% include 'includes/galleries.html.twig' with {galleries: galleries} %}
+        </div>
+    </div>
+{% endblock %}

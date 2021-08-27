@@ -1,0 +1,64 @@
+labels:
+    email: El. paštas
+    password: Slaptažodis
+    address: Adresas
+    phone: Tel. numeris
+    translations: Vertimai
+    id: Id
+    created: Sukurta
+    updated: Atnaujinta
+    photos: Nuotraukos
+    photo: Nuotrauka
+    title: Pavadinimas
+    price: Kaina
+    perks: Privalumai
+    order_url: Užsakymo nuoroda
+    people_count: Žmonių skaičius
+    nights_count: Naktų skaičius
+    duration: Trukmė
+    featured: Iškeltas
+    location: Lokacija
+    category: Kategorija
+    longitude: Ilguma
+    latitude: Platuma
+    hotels: Viešbučiai
+    hotel: Viešbutis
+    rooms: Kambariai
+    room: Kambarys
+    rating: Įvertinimas
+    positiveDescription: Teigiamas atsiliepimas
+    negativeDescription: Neigiamas atsiliepimas
+    fullName: Pilnas vardas
+    visible: Matomas
+    date: Data
+    description: Aprašymas
+    facebook: Facebook
+    instagram: Instagram
+
+titles:
+    login: Prisijungimas
+    locations: Lokacijos
+    products: Produktai
+    rooms: Kambariai
+    products_categories: Produktų kategorijos
+    admin: Administratoriaus panelė
+    perks: Privalumai
+    galleries: Galerijos
+    hotels: Viešbučiai
+    accommodation: Apgyvendinimas
+    menu: Meniu
+    reviews: Atsiliepimai
+    banquet_halls: Banketinės salės
+    meals: Maitinimas
+
+buttons:
+    login: Prisijungti
+    hotel: viešbutį
+    location: lokaciją
+    room: kambarį
+    perk: privalumą
+    product: produktą
+    product_category: produkto kategoriją
+    gallery: galeriją
+    review: atsiliepimą
+    banquet_hall: banketinę salę

@@ -1,0 +1,56 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = 'contacts.title' | trans %}
+{% set navigation_active = 'contacts' %}
+
+{% block main %}
+    <div class="contacts-page">
+        <div class="container">
+            <div class="content">
+                <h2 class="title">{{ 'contacts.get_in_touch' | trans }}</h2>
+                <p class="description">{{ 'contacts.get_in_touch_description' | trans }}</p>
+                <form class="contacts-form">
+                    <div class="row">
+                        <div class="form-group">
+                            {{ form_label(form.name) }}
+                            {{ form_widget(form.name) }}
+                            {{ form_errors(form.name) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                    </div>
+                   <div class="row">
+                       <div class="form-group">
+                           {{ form_label(form.phone) }}
+                           {{ form_widget(form.phone) }}
+                           {{ form_errors(form.phone) }}
+                       </div>
+                       <div class="form-group">
+                           {{ form_label(form.subject) }}
+                           {{ form_widget(form.subject) }}
+                           {{ form_errors(form.subject) }}
+                       </div>
+                   </div>
+                    <div class="row">
+                        <div class="form-group">
+                            {{ form_label(form.message) }}
+                            {{ form_widget(form.message) }}
+                            {{ form_errors(form.message) }}
+                        </div>
+                    </div>
+                    <div class="button-row">
+                        <button class="button button-primary">{{ 'contacts.send_message' | trans }}</button>
+                    </div>
+                </form>
+            </div>
+            <div class="hours">
+                <div class="details">
+                    <span class="caption">{{ 'contacts.call_for_reservations' | trans }}</span>
+                    <h4 class="title">{{ 'contacts.work_hours' | trans }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

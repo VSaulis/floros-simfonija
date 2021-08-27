@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% set title = 'titles.locations' | trans %}
+
+{% block body %}
+    <div class="locations-page">
+        <div class="locations">
+            {% for location in locations %}
+                <a href="{{ path('location home', {id: location.id}) }}" class="location">
+                    <img class="image" alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.first(), 'file') }}"/>
+                    <h3 class="title">{{ location.title(app.request.locale) }}</h3>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

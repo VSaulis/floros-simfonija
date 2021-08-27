@@ -1,0 +1,23 @@
+<div class="locales">
+    <div class="locale">
+        {% if app.request.locale == 'lt' %}
+            <span class="locale-item active">LT</span>
+        {% else %}
+            <a href="{{ path(app.request.get('_route'), app.request.attributes.get('_route_params')|merge({ _locale: 'lt' })) }}" class="locale-item">LT</a>
+        {% endif %}
+    </div>
+    <div class="locale">
+        {% if app.request.locale == 'en' %}
+            <span class="locale-item active">EN</span>
+        {% else %}
+            <a href="{{ path(app.request.get('_route'), app.request.attributes.get('_route_params')|merge({ _locale: 'en' })) }}" class="locale-item">EN</a>
+        {% endif %}
+    </div>
+    <div class="locale">
+        {% if app.request.locale == 'ru' %}
+            <span class="locale-item active">RU</span>
+        {% else %}
+            <a href="{{ path(app.request.get('_route'), app.request.attributes.get('_route_params')|merge({ _locale: 'ru' })) }}" class="locale-item">RU</a>
+        {% endif %}
+    </div>
+</div>

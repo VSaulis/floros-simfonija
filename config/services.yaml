@@ -1,0 +1,40 @@
+parameters:
+    locations_photos_path: /uploads/locations
+    products_photos_path: /uploads/products
+    rooms_photos_path: /uploads/rooms
+    galleries_photos_path: /uploads/galleries
+    banquet_halls_photos_path: /uploads/banquet-halls
+    locale: 'lt'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    App\Controller\Admin\LocationController:
+        arguments:
+            - '%locations_photos_path%'
+
+    App\Controller\Admin\ProductController:
+        arguments:
+            - '%products_photos_path%'
+
+    App\Controller\Admin\RoomController:
+        arguments:
+            - '%rooms_photos_path%'
+
+    App\Controller\Admin\GalleryController:
+        arguments:
+            - '%galleries_photos_path%'
+
+    App\Controller\Admin\BanquetHallController:
+        arguments:
+            - '%banquet_halls_photos_path%'

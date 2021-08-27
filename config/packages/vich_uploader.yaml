@@ -1,0 +1,43 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        locations_photos:
+            uri_prefix:         '%locations_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%locations_photos_path%'
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     true
+            delete_on_update:   true
+            delete_on_remove:   true
+
+        banquet_halls_photos:
+            uri_prefix: '%banquet_halls_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%banquet_halls_photos_path%'
+            namer: vich_uploader.namer_uniqid
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true
+
+        products_photos:
+            uri_prefix: '%products_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%products_photos_path%'
+            namer: vich_uploader.namer_uniqid
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true
+
+        rooms_photos:
+            uri_prefix: '%rooms_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%rooms_photos_path%'
+            namer: vich_uploader.namer_uniqid
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true
+
+        galleries_photos:
+            uri_prefix: '%galleries_photos_path%'
+            upload_destination: '%kernel.project_dir%/public%galleries_photos_path%'
+            namer: vich_uploader.namer_uniqid
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true

@@ -1,0 +1,48 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = location.title(app.request.locale) %}
+{% set navigation_active = 'home' %}
+{% set hero_class = "large" %}
+
+{% block main %}
+    <div class="home-page">
+        <div class="container sections">
+            <section class="section">
+                {% include 'includes/about-us-widget.html.twig' with {location: location} %}
+            </section>
+            {% if hotels | length > 0 %}
+                <section class="section">
+                    <div class="section-top-right"></div>
+                    <div class="section-bottom-left"></div>
+                    <span class="section-caption">{{ 'home.find_place_to_stay' | trans }}</span>
+                    <h2 class="section-title">{{ 'titles.hotels' | trans }}</h2>
+                    {% include 'includes/hotels.html.twig' with {hotels: hotels} %}
+                </section>
+            {% endif %}
+            {% if banquetHalls | length > 0 %}
+                <section class="section">
+                    <div class="section-top-right"></div>
+                    <div class="section-bottom-left"></div>
+                    <span class="section-caption">{{ 'home.find_place_to_celebrate' | trans }}</span>
+                    <h2 class="section-title">{{ 'titles.banquet_halls' | trans }}</h2>
+                    {% include 'includes/banquet-halls.html.twig' with {banquetHalls: banquetHalls} %}
+                </section>
+            {% endif %}
+            {% if galleries | length > 0 %}
+                <section class="section">
+                    <div class="section-top-left"></div>
+                    <div class="section-bottom-right"></div>
+                    <span class="section-caption">{{ 'home.look_around_from_home' | trans }}</span>
+                    <h2 class="section-title">{{ 'titles.galleries' | trans }}</h2>
+                    {% include 'includes/galleries.html.twig' with {galleries: galleries} %}
+                </section>
+            {% endif %}
+        </div>
+        {% if reviews | length > 0 %}
+            <section class="section reviews-sections">
+                <span class="section-caption">{{ 'home.find_out_what_other_think_about_us' | trans }}</span>
+                <h2 class="section-title">{{ 'titles.reviews' | trans }}</h2>
+                {% include 'includes/reviews.html.twig' with {reviews: reviews} %}
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}

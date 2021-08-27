@@ -1,0 +1,93 @@
+.reviews-container {
+    width: 100%;
+    overflow-x: hidden;
+
+    .swiper-pagination {
+        .swiper-pagination-bullet-active {
+            background-color: $color-primary;
+        }
+    }
+
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .reviews {
+        width: 100%;
+        position: relative;
+
+        .swiper-slide {
+            margin-bottom: 50px;
+            padding: 5px;
+            background-color: $color-light-grey;
+            border: 1px solid $color-light-grey-2;
+            transform: scale(0.9);
+            transition: all 0.3s ease-in-out;
+
+            &.swiper-slide-active {
+                transform: scale(1.0);
+            }
+
+            .review {
+                display: flex;
+                border: 1px solid $color-light-grey-2;
+                align-items: center;
+                position: relative;
+                justify-items: center;
+                flex-direction: column;
+                padding: 30px;
+                height: 250px;
+                background-color: $color-white;
+
+                .fa-quote-left {
+                    position: absolute;
+                    top: 15px;
+                    left: 20px;
+                    font-size: 34px;
+                    color: $color-light-grey-2;
+                }
+
+                .fa-quote-right {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 20px;
+                    font-size: 34px;
+                    color: $color-light-grey-2;
+                }
+
+                .review-author {
+                    font-weight: $font-weight-semi-bold;
+                    font-size: $font-size-l;
+                    color: $color-text-primary;
+                    display: block;
+                    margin-bottom: 15px;
+                }
+
+                .review-description {
+                    font-size: $font-size-xs-1;
+                    line-height: 24px;
+                    display: block;
+                    font-weight: $font-weight-regular;
+                    color: $color-text-quaternary;
+                }
+
+                .review-rating {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+
+                    .fa-star {
+                        padding: 0 2px;
+                        color: $color-text-tertiary;
+                        font-size: 16px;
+
+                        &.checked {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

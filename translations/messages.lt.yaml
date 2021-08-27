@@ -1,0 +1,81 @@
+navigation:
+    home: Pagrindinis puslapis
+    about_us: Apie mus
+    menu: Meniu
+    contacts: Kontaktai
+    gallery: Galerija
+    galleries: Galerijos
+    rooms: Kambariai
+    banquet_halls: Banketinės salės
+
+titles:
+    home: Pagrindinis puslapis
+    about_us: Apie mus
+    menu: Meniu
+    gallery: Galerija
+    galleries: Galerijos
+    contacts: Kontaktai
+    rooms: Kambariai
+    similar_rooms: Panašūs kambariai
+    perks: Privalumai
+    location: Lokacija
+    locations: Lokacijos
+    reviews: Atsiliepimai
+    hotels: Viešbučiai
+    banquet_halls: Banketinės salės
+
+room:
+    book: Užsakyti
+    get_directions: Gauti nuorodas
+
+banquet_halls:
+    view: Peržiūrėti
+
+galleries:
+    view: Peržiūrėti
+
+about_us:
+    few_words_about_us: Keletą žodžių apie mus
+    our_story: Mūsų istorija
+
+home:
+    find_place_to_stay: Susiraskite vietą apsistoti
+    find_out_what_other_think_about_us: Sužinokite ką kiti galvoja apie mus
+    look_around_from_home: Apsidairykite neišėję iš namų
+    find_place_to_celebrate: Suraskite vietą atšvęsti
+
+header:
+    email: El. paštas
+    phone: Telefonas
+
+footer:
+    follow_us: Mus sekite
+    about_us: Apie mus
+    links: Nuorodos
+    about_us_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eaque ipsa quae ab illo inventore veritatis et quasi architecto.
+    contact_info: Kontaktinė informacija
+    subscribe: Prenumeruoti
+    read_more: Skaityti daugiau
+    get_in_touch: Susisiekti
+    email: El. paštas
+    phone: Telefonas
+    address: Adresas
+    created_by: Sukurta
+    all_rights_reserved: Visos teisės saugomos
+    subscribe_description: Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.
+
+contacts:
+    send_message: Siųsti žinutę
+    title: Kontaktai
+    caption: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    get_in_touch: Susisiekite
+    call_for_reservations: Skambinti dėl rezervacijų
+    work_hours: Darbo valandos
+    get_in_touch_description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.
+
+message:
+    email: El. paštas
+    phone: Telefonas
+    subject: Tema
+    message: Žinutė
+    name: Vardas

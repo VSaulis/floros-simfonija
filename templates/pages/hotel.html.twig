@@ -1,0 +1,11 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = hotel.title(app.request.locale) %}
+{% set navigation_active = 'hotel_' ~ hotel.id %}
+
+{% block main %}
+    <div class="hotel-page">
+        <div class="container">
+            {% include 'includes/rooms.html.twig' with {rooms: rooms} %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = room.title(app.request.locale) %}
+{% set navigation_active = 'hotel_' ~ hotel.id %}
+
+{% block main %}
+    <div class="room-page">
+        <div class="container top-container">
+            <div class="content">
+                <h2 class="content-title">{{ room.title(app.request.locale) }}</h2>
+                <p class="description">{{ room.description(app.request.locale) }}</p>
+                <div id="images" class="images">
+                    <div data-src="{{ vich_uploader_asset(room.photos.first(), 'file') }}" class="image-container main-image">
+                        <img alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}"/>
+                    </div>
+                    <div class="thumbnails">
+                        {% for photo in room.photos %}
+                            <div data-src="{{ vich_uploader_asset(photo, 'file') }}" class="image-container thumbnail">
+                                <img alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(photo, 'file') }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <h3 class="subtitle">{{ 'titles.similar_rooms' | trans }}</h3>
+                {% include 'includes/rooms.html.twig' with {rooms: similarRooms} %}
+            </div>
+            <div class="side">
+                <div class="map-container">
+                    <div id="map" data-longitude="{{ room.hotel.longitude }}" data-latitude="{{ room.hotel.latitude }}" class="map"></div>
+                    <div class="map-details">
+                        <h3 class="details-title">{{ room.hotel.title(app.request.locale) }}</h3>
+                        <p class="details-description">{{ room.hotel.address }}</p>
+                        <a target="_blank" href="#" class="button button-primary">{{ 'room.get_directions' | trans }}</a>
+                    </div>
+                </div>
+                <div class="perks-container">
+                    <div class="perks-content">
+                        <div class="perks">
+                            <h3 class="subtitle">{{ 'titles.perks' | trans }}</h3>
+                            {% for perk in room.perks %}
+                                <span class="perk">{{ perk.title(app.request.locale) }}</span>
+                            {% endfor %}
+                        </div>
+                        <span class="price">{{ room.price | priceFormat }}</span>
+                        <a target="_blank" href="{{ room.orderUrl }}" class="button button-primary">{{ 'room.book' | trans }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

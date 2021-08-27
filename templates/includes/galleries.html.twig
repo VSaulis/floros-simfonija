@@ -1,0 +1,18 @@
+<div class="galleries">
+    {% for gallery in galleries %}
+        <div class="gallery">
+            <div class="images">
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(gallery.photos.get(0), 'file') }}" class="image"/>
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(gallery.photos.get(1), 'file') }}" class="image"/>
+            </div>
+            <div class="details">
+                <h3 class="details-title">{{ gallery.title(app.request.locale) }}</h3>
+                <span class="details-date">{{ gallery.created | dateFormat }}</span>
+                <p class="details-description">{{ gallery.description(app.request.locale) }}</p>
+                <div class="actions">
+                    <a href="{{ path('location gallery', {id: location.id, galleryId: gallery.id}) }}" class="button button-primary">{{ 'galleries.view' | trans }} ({{ gallery.photos | length }})</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

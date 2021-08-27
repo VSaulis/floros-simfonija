@@ -1,0 +1,33 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = banquetHall.title(app.request.locale) %}
+{% set navigation_active = 'banquet_halls' %}
+
+{% block main %}
+    <div class="banquet-hall-page">
+        <div class="container top-container">
+            <div class="content">
+                <h2 class="content-title">{{ banquetHall.title(app.request.locale) }}</h2>
+                <p class="description">{{ banquetHall.description(app.request.locale) }}</p>
+                <div id="images" class="images">
+                    <div data-src="{{ vich_uploader_asset(banquetHall.photos.first(), 'file') }}" class="image-container main-image">
+                        <img alt="{{ banquetHall.title(app.request.locale) }}" src="{{ vich_uploader_asset(banquetHall.featuredPhoto, 'file') }}"/>
+                    </div>
+                    <div class="thumbnails">
+                        {% for photo in banquetHall.photos %}
+                            <div data-src="{{ vich_uploader_asset(photo, 'file') }}" class="image-container thumbnail">
+                                <img alt="{{ banquetHall.title(app.request.locale) }}" src="{{ vich_uploader_asset(photo, 'file') }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="perks-container">
+                    <div class="perks-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

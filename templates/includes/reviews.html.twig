@@ -1,0 +1,22 @@
+<div class="reviews-container">
+    <div class="swiper reviews">
+        <div class="swiper-wrapper">
+            {% for review in reviews %}
+                <div class="swiper-slide">
+                    <div class="review">
+                        <i class="fa fa-quote-left"></i>
+                        <i class="fa fa-quote-right"></i>
+                        <span class="review-author">{{ review.fullName }}</span>
+                        <div class="review-rating">
+                            {% for i in 1..5 %}
+                                <i class="fa fa-star {% if review.rating >= i %}checked{% endif %}"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="review-description">{{ review.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

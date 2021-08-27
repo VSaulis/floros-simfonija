@@ -1,0 +1,100 @@
+.banquet-halls {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 100px;
+
+    .banquet-hall {
+        display: flex;
+
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+
+            .images .image {
+                &:first-of-type {
+                    left: 0;
+                    right: auto;
+                }
+
+                &:last-of-type {
+                    margin-left: 50px;
+                    margin-right: 0;
+                }
+            }
+
+            .details {
+                padding-right: 50px;
+                padding-left: 0;
+
+                .actions {
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        .images {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .image {
+                object-fit: cover;
+                display: block;
+                box-shadow: 0 9px 16px rgba($color-box-shadow, 0.35);
+
+                &:first-of-type {
+                    height: 240px;
+                    width: 360px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                &:last-of-type {
+                    height: 400px;
+                    margin-right: 50px;
+                    margin-top: 50px;
+                    width: 600px;
+                }
+            }
+        }
+
+        .details {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: 50px;
+
+            .details-title {
+                font-size: $font-size-xxl;
+                font-weight: $font-weight-bold;
+                color: $color-text-tertiary;
+                font-family: $font-family-headers;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .actions {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .details-date {
+                font-size: $font-size-xs;
+                display: block;
+                margin-bottom: 20px;
+                font-weight: $font-weight-regular;
+                color: $color-text-secondary;
+            }
+
+            .details-description {
+                font-size: $font-size-xs-1;
+                line-height: 24px;
+                display: block;
+                margin-bottom: 30px;
+                font-weight: $font-weight-regular;
+                color: $color-text-quaternary;
+            }
+        }
+    }
+}

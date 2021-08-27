@@ -1,0 +1,11 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = 'titles.banquet_halls' | trans %}
+{% set navigation_active = 'banquet_halls' %}
+
+{% block main %}
+    <div class="banquet-halls-page">
+        <div class="container">
+            {% include 'includes/banquet-halls.html.twig' with {banquetHalls: banquetHalls} %}
+        </div>
+    </div>
+{% endblock %}

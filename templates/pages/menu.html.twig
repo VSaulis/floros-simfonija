@@ -1,0 +1,30 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = 'titles.menu' | trans %}
+{% set navigation_active = 'menu' %}
+
+{% block main %}
+    <div class="menu-page">
+        <div class="container">
+            <div class="categories">
+                {% for category in categories %}
+                    <div class="category">
+                        <h4 class="title">{{ category.title(app.request.locale) }}</h4>
+                        <p class="description">{{ category.description(app.request.locale) }}</p>
+                    </div>
+                    <div class="products">
+                        {% for product in category.products %}
+                            <div class="product">
+                                <img alt="{{ product.title(app.request.locale) }}" src="{{ asset('images/product.jpg') }}" class="photo"/>
+                                <div class="details">
+                                    <h4 class="title">{{ product.title(app.request.locale) }}</h4>
+                                    <p class="description">{{ product.description(app.request.locale) }}</p>
+                                </div>
+                                <span class="price">{{ product.price | priceFormat }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

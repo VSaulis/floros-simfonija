@@ -1,9 +1,0 @@
-<div class="hero-container">
-    <img class="image" alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.first(), 'file') }}"/>
-    <div class="container">
-        {% if title is defined %}
-            <h3 class="title">{{ title }}</h3>
-        {% endif %}
-        {% include 'includes/breadcrumbs.html.twig' %}
-    </div>
-</div>

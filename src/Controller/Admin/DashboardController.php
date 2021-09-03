@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Article;
 use App\Entity\BanquetHall;
 use App\Entity\Gallery;
 use App\Entity\Hotel;
@@ -59,6 +60,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('titles.locations', 'fas fa-map-marker', Location::class)->setDefaultSort(['created' => 'DESC']);
         yield MenuItem::linkToCrud('titles.galleries', 'fas fa-images', Gallery::class)->setDefaultSort(['created' => 'DESC']);
         yield MenuItem::linkToCrud('titles.reviews', 'fas fa-comments', Review::class)->setDefaultSort(['created' => 'DESC']);
+        yield MenuItem::linkToCrud('titles.news', 'fas fa-calendar', Article::class)->setDefaultSort(['created' => 'DESC']);
 
         yield MenuItem::section('titles.meals');
         yield MenuItem::linkToCrud('titles.banquet_halls', 'fas fa-building', BanquetHall::class)->setDefaultSort(['created' => 'DESC']);

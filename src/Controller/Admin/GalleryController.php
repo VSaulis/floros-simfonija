@@ -66,7 +66,7 @@ class GalleryController extends AbstractCrudController
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
 
-        yield ImageField::new('photos[0].fileName', 'labels.photo')
+        yield ImageField::new('featuredPhoto.fileName', 'labels.photo')
             ->setBasePath($this->photoPath)
             ->hideOnForm();
 

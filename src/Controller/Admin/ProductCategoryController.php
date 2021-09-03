@@ -57,6 +57,8 @@ class ProductCategoryController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield AssociationField::new('parent', 'labels.parent_category');
+        yield AssociationField::new('children', 'labels.children')->hideOnForm();
         yield AssociationField::new('products', 'labels.products')->onlyOnIndex();
 
         yield CollectionField::new('translations', 'labels.translations')

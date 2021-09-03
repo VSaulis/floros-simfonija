@@ -10,10 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Product
+class Article
 {
     /**
      * @ORM\Id
@@ -30,37 +30,42 @@ class Product
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="products")
+     * @ORM\Column(type="date")
+     */
+    private $dateFrom;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="date")
+     */
+    private $dateTo;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $location;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
-     * @ORM\ManyToOne(targetEntity="App\Entity\ProductCategory", inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
-
-    /**
-     * @ORM\Column(type="decimal", precision=10, scale=2)
-     * @Assert\NotBlank(message="field_is_required")
-     * @Assert\Regex(
-     *     pattern="/^-?[0-9]+(?:\.[0-9]{0,2})?$/",
-     *     message="field_is_invalid"
-     * )
-     */
-    private $price;
-
-    /**
      * @ORM\OneToMany(
-     *     targetEntity="App\Entity\ProductTranslation",
-     *     mappedBy="product",
+     *     targetEntity="App\Entity\ArticleTranslation",
+     *     mappedBy="article",
      *     orphanRemoval=true,
      *     cascade={"remove", "persist"}
      * )
      */
     private $translations;
+
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\ArticlePhoto",
+     *     mappedBy="article",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $photos;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -75,6 +80,7 @@ class Product
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->photos = new ArrayCollection();
         $this->visible = true;
     }
 
@@ -99,31 +105,21 @@ class Product
         return $this->id;
     }
 
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    public function setPrice($price): void
-    {
-        $this->price = $price;
-    }
-
     public function getTitle(string $locale = Locales::LT): string
     {
         $translation = $this->getTranslationByLocale($locale);
         return $translation ? $translation->getTitle() : "";
     }
 
-    public function getDescription(string $locale): ?string
+    public function getContent(string $locale): string
     {
         $translation = $this->getTranslationByLocale($locale);
-        return $translation ? $translation->getDescription() : "";
+        return $translation ? $translation->getContent() : "";
     }
 
-    public function getTranslationByLocale(string $locale): ProductTranslation
+    public function getTranslationByLocale(string $locale): ArticleTranslation
     {
-        $predicate = function (ProductTranslation $translation) use ($locale) {
+        $predicate = function (ArticleTranslation $translation) use ($locale) {
             return $translation->getLocale() == $locale;
         };
 
@@ -140,15 +136,46 @@ class Product
         $this->translations = $translations;
     }
 
-    public function addTranslation(ProductTranslation $translation)
+    public function addTranslation(ArticleTranslation $translation)
     {
-        $translation->setProduct($this);
+        $translation->setArticle($this);
         $this->translations->add($translation);
     }
 
-    public function removeTranslation(ProductTranslation $translation)
+    public function removeTranslation(ArticleTranslation $translation)
     {
         $this->translations->removeElement($translation);
+    }
+
+    public function getPhotos(): Collection
+    {
+        return $this->photos;
+    }
+
+    public function setPhotos(ArrayCollection $photos): void
+    {
+        $this->photos = $photos;
+    }
+
+    public function addPhoto(ArticlePhoto $photo)
+    {
+        $photo->setArticle($this);
+        $this->photos->add($photo);
+    }
+
+    public function removePhoto(ArticlePhoto $photo)
+    {
+        $this->photos->removeElement($photo);
+    }
+
+    public function getFeaturedPhoto()
+    {
+        $predicate = function (ArticlePhoto $photo) {
+            return $photo->getFeatured() == true;
+        };
+
+        $featuredPhoto = $this->photos->filter($predicate)->first();
+        return $featuredPhoto ? $featuredPhoto :  $this->photos->first();
     }
 
     public function getLocation()
@@ -161,14 +188,24 @@ class Product
         $this->location = $location;
     }
 
-    public function getCategory()
+    public function getDateTo()
     {
-        return $this->category;
+        return $this->dateTo;
     }
 
-    public function setCategory($category): void
+    public function setDateTo($dateTo): void
     {
-        $this->category = $category;
+        $this->dateTo = $dateTo;
+    }
+
+    public function getDateFrom()
+    {
+        return $this->dateFrom;
+    }
+
+    public function setDateFrom($dateFrom): void
+    {
+        $this->dateFrom = $dateFrom;
     }
 
     public function getVisible()

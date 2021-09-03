@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210827141425 extends AbstractMigration
+final class Version20210903231402 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,12 +20,12 @@ final class Version20210827141425 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE location ADD facebook VARCHAR(255) NOT NULL, ADD instagram VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE product_category_translation DROP description');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE location DROP facebook, DROP instagram');
+        $this->addSql('ALTER TABLE product_category_translation ADD description LONGTEXT CHARACTER SET utf8 NOT NULL COLLATE `utf8_unicode_ci`');
     }
 }

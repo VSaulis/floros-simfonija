@@ -2,6 +2,7 @@
 
 namespace App\Util;
 
+use App\Entity\Article;
 use App\Entity\BanquetHall;
 use App\Entity\Gallery;
 use App\Entity\Hotel;
@@ -76,6 +77,23 @@ class BreadcrumbsHelper
         ];
     }
 
+    public function getNewsBreadcrumbs(Location $location, string $locale): array
+    {
+        return [
+            [
+                'link' => $this->router->generate('locations'),
+                'title' => $this->translator->trans('titles.locations')
+            ],
+            [
+                'link' => $this->router->generate('location home', ['id' => $location->getId()]),
+                'title' => $location->getTitle($locale)
+            ],
+            [
+                'title' => $this->translator->trans('titles.news')
+            ]
+        ];
+    }
+
     public function getBanquetHallsBreadcrumbs(Location $location, string $locale): array
     {
         return [
@@ -110,6 +128,27 @@ class BreadcrumbsHelper
             ],
             [
                 'title' => $banquetHall->getTitle($locale)
+            ]
+        ];
+    }
+
+    public function getNewsArticleBreadcrumbs(Location $location, Article $article, string $locale): array
+    {
+        return [
+            [
+                'link' => $this->router->generate('locations'),
+                'title' => $this->translator->trans('titles.locations')
+            ],
+            [
+                'link' => $this->router->generate('location home', ['id' => $location->getId()]),
+                'title' => $location->getTitle($locale)
+            ],
+            [
+                'link' => $this->router->generate('location news', ['id' => $location->getId()]),
+                'title' => $this->translator->trans('titles.news')
+            ],
+            [
+                'title' => $article->getTitle($locale)
             ]
         ];
     }

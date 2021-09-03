@@ -34,12 +34,6 @@ class ProductCategoryTranslation
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @ORM\Column(type="text")
-     */
-    private $description;
-
-    /**
-     * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="string")
      */
     private $locale;
@@ -73,16 +67,6 @@ class ProductCategoryTranslation
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function setDescription($description): void
-    {
-        $this->description = $description;
     }
 
     public function getTitle()

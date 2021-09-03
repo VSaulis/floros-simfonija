@@ -13,7 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
  */
-class ProductPhoto
+class ArticlePhoto
 {
     /**
      * @ORM\Id
@@ -24,10 +24,15 @@ class ProductPhoto
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="photos")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="photos")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $product;
+    private $article;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $featured;
 
     /**
      * @ORM\Column(type="string")
@@ -41,7 +46,7 @@ class ProductPhoto
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @Vich\UploadableField(mapping="products_photos", fileNameProperty="fileName", size="fileSize")
+     * @Vich\UploadableField(mapping="articles_photos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;
 
@@ -54,6 +59,11 @@ class ProductPhoto
      * @ORM\Column(type="datetime")
      */
     private $created;
+
+    public function __construct()
+    {
+        $this->featured = false;
+    }
 
     /**
      * @ORM\PrePersist
@@ -107,14 +117,24 @@ class ProductPhoto
         $this->fileSize = $fileSize;
     }
 
-    public function getProduct()
+    public function getFeatured()
     {
-        return $this->product;
+        return $this->featured;
     }
 
-    public function setProduct($product): void
+    public function setFeatured($featured): void
     {
-        $this->product = $product;
+        $this->featured = $featured;
+    }
+
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    public function setArticle($article): void
+    {
+        $this->article = $article;
     }
 
     public function getUpdated()

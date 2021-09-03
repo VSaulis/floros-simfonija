@@ -6,6 +6,9 @@
             </a>
             <div class="links-container">
                 <a href="{{ path('location home', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'home' %}active{% endif %}">{{ 'navigation.home' | trans }}</a>
+                {% if location.articles | length > 0 %}
+                    <a href="{{ path('location news', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'news' %}active{% endif %}">{{ 'navigation.news' | trans }}</a>
+                {% endif %}
                 {% if location.products | length > 0 %}
                     <a href="{{ path('location menu', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'menu' %}active{% endif %}">{{ 'navigation.menu' | trans }}</a>
                 {% endif %}

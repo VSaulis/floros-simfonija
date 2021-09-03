@@ -2,123 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/setupReviews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_about-us-widget.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_banquet-halls.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_hotels.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_banquet-hall.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_locations.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210825071739.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210827141208.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78356938995022198.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835a11f147715463.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835b072800107811.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835bf8a629716291.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835c99f886691350.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835d71d962408657.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835e526155646692.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835f538750302072.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78360b6c934161406.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78361f54697626480.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783630f5913193290.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7836422d823190806.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783650d5424611195.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78366028991541712.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78367140917270020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/locations/612833878efa5832862496.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/locations/61283387917ee062981914.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/locations/612834949d8df067351692.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/locations/61283494a02ad033876357.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/BanquetHallController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ReviewController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/BanquetHall.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/BanquetHallPhoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/BanquetHallTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Hotel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/HotelTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Review.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/BanquetHallPhotoType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/BanquetHallTranslationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/HotelTranslationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/BanquetHallRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/HotelRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/about-us-widget.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/banquet-halls.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/hotels.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/reviews.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/banquet-hall.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/banquet-halls.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/locations.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ArticlePhoto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ArticleTranslation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/ArticlePhotoType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/ArticleTranslationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/news-article.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/news.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/floros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/floros.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_breadcrumbs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_galleries.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_galleries.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_locales.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_locales.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_room.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_room.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/variables/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/variables/_colors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/variables/_font-sizes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/variables/_font-sizes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210823191732.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210823193852.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210824073402.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210823194240.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210824075642.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210823194648.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210827141425.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/locations/610d424704ed1969729282.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/locations/610d42638f41d144868616.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/locations/610d4278c0131320659013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210824073402.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210824075642.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210903232540.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210825071739.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210826211151.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210827141208.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210827141425.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210903231402.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/products/610d6648c5275698291969.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/products/610d6648caa6f609291143.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/LocationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RoomCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/HotelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RoomPerkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RoomPerkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocationsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Gallery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/LocationPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LocationPhoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/LocationTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LocationTranslation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ProductCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RoomCategory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RoomCategoryTranslation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RoomPerk.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RoomPerk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RoomTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RoomTranslation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/LocationPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/LocationPhotoType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/LocationTranslationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/LocationTranslationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/RoomCategoryTranslationType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/RoomTranslationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/RoomTranslationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/GalleryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GalleryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RoomCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ReviewRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RoomRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RoomRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductCategoryTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategoryTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPhoto.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/ProductCategoryTranslationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/ProductCategoryTranslationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/ProductPhotoType.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Util/BreadcrumbsHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/BreadcrumbsHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/galleries.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/galleries.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hero.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navigation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/rooms.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/rooms.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/social.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/social.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/about-us.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/room.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/rooms.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/hotel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/admin.en.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/admin.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/admin.lt.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/translations/messages.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
     </list>
@@ -249,40 +173,40 @@
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1uuck3k1iKAxa5oVGngUT07NsNS" />
@@ -349,7 +273,8 @@
       <workItem from="1625899270989" duration="19971000" />
       <workItem from="1628254345069" duration="14960000" />
       <workItem from="1629649834663" duration="37467000" />
-      <workItem from="1629846521660" duration="31889000" />
+      <workItem from="1629846521660" duration="34588000" />
+      <workItem from="1630706097669" duration="5442000" />
     </task>
     <servers />
   </component>

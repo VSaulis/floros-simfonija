@@ -110,6 +110,17 @@ class Location
     /**
      * @Assert\Valid
      * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Article",
+     *     mappedBy="location",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $articles;
+
+    /**
+     * @Assert\Valid
+     * @ORM\OneToMany(
      *     targetEntity="App\Entity\Hotel",
      *     mappedBy="location",
      *     orphanRemoval=true,
@@ -148,11 +159,12 @@ class Location
         $this->galleries = new ArrayCollection();
         $this->reviews = new ArrayCollection();
         $this->banquetHalls = new ArrayCollection();
+        $this->articles = new ArrayCollection();
     }
 
     public function __toString(): string
     {
-        return (string) $this->getTitle(Locales::LT);
+        return (string) $this->getTitle();
     }
 
     /**
@@ -347,6 +359,16 @@ class Location
     public function setInstagram($instagram): void
     {
         $this->instagram = $instagram;
+    }
+
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function setArticles(ArrayCollection $articles): void
+    {
+        $this->articles = $articles;
     }
 
     public function getUpdated()

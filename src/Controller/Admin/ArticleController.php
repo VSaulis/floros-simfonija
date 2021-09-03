@@ -3,25 +3,34 @@
 namespace App\Controller\Admin;
 
 use App\Constant\Locales;
-use App\Entity\Product;
-use App\Entity\ProductTranslation;
-use App\Form\Type\ProductTranslationType;
+use App\Entity\Article;
+use App\Entity\ArticleTranslation;
+use App\Form\Type\ArticlePhotoType;
+use App\Form\Type\ArticleTranslationType;
 use App\Util\DateUtils;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class ProductController extends AbstractCrudController
+class ArticleController extends AbstractCrudController
 {
+    private $photoPath;
+
+    public function __construct(string $photoPath)
+    {
+        $this->photoPath = $photoPath;
+    }
+
     public static function getEntityFqcn(): string
     {
-        return Product::class;
+        return Article::class;
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -29,28 +38,28 @@ class ProductController extends AbstractCrudController
         return $crud
             ->setTimezone('Europe/Vilnius')
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
-            ->setEntityLabelInSingular('buttons.product')
-            ->setEntityLabelInPlural('titles.products')
+            ->setEntityLabelInSingular('buttons.article')
+            ->setEntityLabelInPlural('titles.news')
             ->setSearchFields(['id', 'created', 'updated']);
     }
 
-    public function createEntity(string $entityFqcn): Product
+    public function createEntity(string $entityFqcn): Article
     {
-        $product = new Product();
+        $article = new Article();
 
         foreach (Locales::list() as $locale) {
-            $predicate = function (ProductTranslation $translation) use ($locale) {
+            $predicate = function (ArticleTranslation $translation) use ($locale) {
                 return $translation->getLocale() == $locale;
             };
 
-            if ($product->getTranslations()->filter($predicate)->first() == null) {
-                $translation = new ProductTranslation();
+            if ($article->getTranslations()->filter($predicate)->first() == null) {
+                $translation = new ArticleTranslation();
                 $translation->setLocale($locale);
-                $product->addTranslation($translation);
+                $article->addTranslation($translation);
             }
         }
 
-        return $product;
+        return $article;
     }
 
     public function configureFields(string $pageName): Iterable
@@ -58,14 +67,18 @@ class ProductController extends AbstractCrudController
         yield IdField::new('id', 'labels.id')->hideOnForm();
         yield BooleanField::new('visible', 'labels.visible');
 
+        yield ImageField::new('featuredPhoto.fileName', 'labels.photo')
+            ->setBasePath($this->photoPath)
+            ->hideOnForm();
+
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
-        yield AssociationField::new('category', 'labels.category');
         yield AssociationField::new('location', 'labels.location');
 
-        yield MoneyField::new('price', 'labels.price')
-            ->setCurrency('EUR')
-            ->setStoredAsCents(false);
+        yield DateField::new('dateFrom', 'labels.date_from');
+        yield DateField::new('dateTo', 'labels.date_to');
+
+        yield AssociationField::new('photos', 'labels.photos')->onlyOnIndex();
 
         yield DateTimeField::new('updated', 'labels.updated')
             ->hideOnForm()
@@ -83,6 +96,10 @@ class ProductController extends AbstractCrudController
             ->onlyOnForms()
             ->allowAdd(false)
             ->allowDelete(false)
-            ->setEntryType(ProductTranslationType::class);
+            ->setEntryType(ArticleTranslationType::class);
+
+        yield CollectionField::new('photos', 'labels.photos')
+            ->onlyOnForms()
+            ->setEntryType(ArticlePhotoType::class);
     }
 }

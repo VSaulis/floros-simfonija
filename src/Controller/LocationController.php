@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\BanquetHall;
 use App\Entity\Gallery;
 use App\Entity\Hotel;
@@ -9,6 +10,7 @@ use App\Entity\Location;
 use App\Entity\Room;
 use App\Form\Type\MessageType;
 use App\Model\Message;
+use App\Repository\ArticleRepository;
 use App\Repository\BanquetHallRepository;
 use App\Repository\GalleryRepository;
 use App\Repository\HotelRepository;
@@ -31,6 +33,7 @@ class LocationController extends AbstractController
     private $hotelRepository;
     private $reviewRepository;
     private $banquetHallRepository;
+    private $articleRepository;
 
     public function __construct
     (
@@ -40,7 +43,8 @@ class LocationController extends AbstractController
         RoomRepository $roomRepository,
         GalleryRepository $galleryRepository,
         HotelRepository $hotelRepository,
-        BanquetHallRepository $banquetHallRepository
+        BanquetHallRepository $banquetHallRepository,
+        ArticleRepository $articleRepository
     )
     {
         $this->roomRepository = $roomRepository;
@@ -50,6 +54,7 @@ class LocationController extends AbstractController
         $this->hotelRepository = $hotelRepository;
         $this->reviewRepository = $reviewRepository;
         $this->banquetHallRepository = $banquetHallRepository;
+        $this->articleRepository = $articleRepository;
     }
 
     /**
@@ -129,6 +134,40 @@ class LocationController extends AbstractController
             'location' => $location,
             'galleries' => $galleries,
             'breadcrumbs' => $this->breadcrumbsHelper->getGalleriesBreadcrumbs($location, $request->getLocale())
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/news", name="location news", requirements={"id"="\d+"})
+     * @param Location $location
+     * @param Request $request
+     * @return Response
+     */
+    public function news(Location $location, Request $request): Response
+    {
+        $articles = $this->articleRepository->findLocationArticles($location);
+
+        return $this->render('pages/news.html.twig', [
+            'location' => $location,
+            'articles' => $articles,
+            'breadcrumbs' => $this->breadcrumbsHelper->getNewsBreadcrumbs($location, $request->getLocale())
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/news/{articleId}", name="location news article", requirements={"id"="\d+", "articleId"="\d+"})
+     * @Entity("article", expr="repository.findLocationArticleById(id, articleId)")
+     * @param Location $location
+     * @param Article $article
+     * @param Request $request
+     * @return Response
+     */
+    public function newsArticle(Location $location, Article $article, Request $request): Response
+    {
+        return $this->render('pages/news-article.html.twig', [
+            'location' => $location,
+            'article' => $article,
+            'breadcrumbs' => $this->breadcrumbsHelper->getNewsArticleBreadcrumbs($location, $article, $request->getLocale())
         ]);
     }
 

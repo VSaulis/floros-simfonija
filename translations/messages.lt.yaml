@@ -7,6 +7,7 @@ navigation:
     galleries: Galerijos
     rooms: Kambariai
     banquet_halls: Banketinės salės
+    news: Naujienos
 
 titles:
     home: Pagrindinis puslapis
@@ -23,6 +24,7 @@ titles:
     reviews: Atsiliepimai
     hotels: Viešbučiai
     banquet_halls: Banketinės salės
+    news: Naujienos
 
 room:
     book: Užsakyti

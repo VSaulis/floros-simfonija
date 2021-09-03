@@ -101,12 +101,6 @@ class ProductCategory
         return $translation ? $translation->getTitle() : "";
     }
 
-    public function getDescription(string $locale): string
-    {
-        $translation = $this->getTranslationByLocale($locale);
-        return $translation ? $translation->getDescription() : "";
-    }
-
     public function getTranslationByLocale(string $locale): ProductCategoryTranslation
     {
         $predicate = function (ProductCategoryTranslation $translation) use ($locale) {

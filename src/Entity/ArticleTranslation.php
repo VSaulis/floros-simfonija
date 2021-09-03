@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
  */
-class ProductTranslation
+class ArticleTranslation
 {
     /**
      * @ORM\Id
@@ -21,10 +21,10 @@ class ProductTranslation
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="translations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="translations")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $product;
+    private $article;
 
     /**
      * @Assert\NotBlank(message="field_is_required")
@@ -33,9 +33,10 @@ class ProductTranslation
     private $title;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="text")
      */
-    private $description;
+    private $content;
 
     /**
      * @Assert\NotBlank(message="field_is_required")
@@ -74,16 +75,6 @@ class ProductTranslation
         return $this->id;
     }
 
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function setDescription($description): void
-    {
-        $this->description = $description;
-    }
-
     public function getTitle()
     {
         return $this->title;
@@ -94,16 +85,6 @@ class ProductTranslation
         $this->title = $title;
     }
 
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    public function setProduct($product): void
-    {
-        $this->product = $product;
-    }
-
     public function getLocale()
     {
         return $this->locale;
@@ -112,6 +93,26 @@ class ProductTranslation
     public function setLocale($locale): void
     {
         $this->locale = $locale;
+    }
+
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    public function setArticle($article): void
+    {
+        $this->article = $article;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setContent($content): void
+    {
+        $this->content = $content;
     }
 
     public function getUpdated()

@@ -34,6 +34,11 @@ labels:
     description: Aprašymas
     facebook: Facebook
     instagram: Instagram
+    date_from: Data nuo
+    date_to: Data iki
+    products: Produktai
+    parent_category: Tėvinė kategorija
+    children: Subkategorijos
 
 titles:
     login: Prisijungimas
@@ -50,6 +55,7 @@ titles:
     reviews: Atsiliepimai
     banquet_halls: Banketinės salės
     meals: Maitinimas
+    news: Naujienos
 
 buttons:
     login: Prisijungti
@@ -62,3 +68,4 @@ buttons:
     gallery: galeriją
     review: atsiliepimą
     banquet_hall: banketinę salę
+    article: straipsnį

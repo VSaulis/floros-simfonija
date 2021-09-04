@@ -1,6 +1,8 @@
 {% extends 'layouts/page-layout.html.twig' %}
 {% set title = room.title(app.request.locale) %}
 {% set navigation_active = 'hotel_' ~ hotel.id %}
+{% set hero_longitude = hotel.longitude %}
+{% set hero_latitude = hotel.latitude %}
 
 {% block main %}
     <div class="room-page">
@@ -24,26 +26,29 @@
                 {% include 'includes/rooms.html.twig' with {rooms: similarRooms} %}
             </div>
             <div class="side">
-                <div class="map-container">
-                    <div class="map-content">
-                        <div id="map" data-longitude="{{ room.hotel.longitude }}" data-latitude="{{ room.hotel.latitude }}" class="map"></div>
-                        <div class="map-details">
-                            <h3 class="details-title">{{ room.hotel.title(app.request.locale) }}</h3>
-                            <p class="details-description">{{ room.hotel.address }}</p>
-                            <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="button button-primary">{{ 'room.get_directions' | trans }}</a>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details">
+                            <h3 class="card-title">{{ room.hotel.title(app.request.locale) }}</h3>
+                            <div class="card-caption-container">
+                                <i class="fa fa-map-marker"></i>
+                                <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="card-caption">{{ room.hotel.address }}</a>
+                            </div>
+                            <p class="card-description">{{ room.hotel.description(app.request.locale) }}</p>
+                            <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="button button-primary button-small">{{ 'room.get_directions' | trans }}</a>
                         </div>
                     </div>
                 </div>
-                <div class="perks-container">
-                    <div class="perks-content">
-                        <div class="perks">
-                            <h3 class="subtitle">{{ 'titles.perks' | trans }}</h3>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details perks">
+                            <h3 class="card-title">{{ 'titles.perks' | trans }}</h3>
                             {% for perk in room.perks %}
                                 <span class="perk">{{ perk.title(app.request.locale) }}</span>
                             {% endfor %}
+                            <span class="card-price">{{ room.price | priceFormat }}</span>
+                            <a target="_blank" href="{{ room.orderUrl }}" class="button button-primary button-small">{{ 'room.book' | trans }}</a>
                         </div>
-                        <span class="price">{{ room.price | priceFormat }}</span>
-                        <a target="_blank" href="{{ room.orderUrl }}" class="button button-primary">{{ 'room.book' | trans }}</a>
                     </div>
                 </div>
             </div>

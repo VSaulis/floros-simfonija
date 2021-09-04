@@ -4,11 +4,15 @@
         <div class="contacts">
             <div class="contact">
                 <span class="label">{{ 'header.email' | trans }}: </span>
-                <a class="value" target="_blank" href="mailto:info@florossimfonija.lt">info@florossimfonija.lt</a>
+                <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
             </div>
             <div class="contact">
                 <span class="label">{{ 'header.phone' | trans }}: </span>
-                <a class="value" target="_blank" href="tel:+37063673520">+370 636 73520</a>
+                <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
+            </div>
+            <div class="contact">
+                <span class="label">{{ 'footer.address' | trans }}: </span>
+                <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
             </div>
         </div>
     </div>

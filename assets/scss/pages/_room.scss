@@ -13,83 +13,35 @@
         .side {
             width: 350px;
 
-            .map-container {
-                width: 100%;
-                margin-bottom: 25px;
-                border: 1px solid $color-light-grey-2;
-                background-color: $color-light-grey;
-                padding: 3px;
-
-                .map-content {
-                    background-color: $color-white;
-                    border: 1px solid $color-light-grey-2;
-
-                    .map {
-                        height: 350px;
-                        width: 100%;
-                    }
-
-                    .map-details {
-                        background-color: $color-white;
-                        padding: 20px;
-
-                        .details-title {
-                            display: block;
-                            color: $color-text-primary;
-                            font-size: $font-size-m;
-                            font-weight: $font-weight-semi-bold;
-                            margin-bottom: 5px;
-                        }
-
-                        .details-description {
-                            font-size: $font-size-xs;
-                            display: block;
-                            font-weight: $font-weight-regular;
-                            color: $color-text-secondary;
-                            margin-bottom: 15px;
-                        }
-                    }
-                }
+            > div:first-of-type {
+                margin-bottom: 15px;
             }
 
-            .perks-container {
-                border: 1px solid $color-light-grey-2;
-                background-color: $color-light-grey;
-                padding: 3px;
+            .perks {
+                .card-title {
+                    font-size: $font-size-xl;
+                    margin-bottom: 25px;
+                    font-family: $font-family-headers;
+                }
 
-                .perks-content {
-                    background-color: $color-white;
-                    border: 1px solid $color-light-grey-2;
-                    padding: 25px;
+                .card-footer {
+                    margin-top: 25px;
+                }
 
-                    .price {
-                        font-size: 28px;
-                        color: $color-primary;
-                        font-weight: $font-weight-bold;
-                        font-family: $font-family-headers;
-                        display: block;
-                        text-align: center;
-                        margin-bottom: 25px;
-                    }
+                .card-price {
+                    text-align: center;
+                    margin: 25px 0;
+                    font-size: $font-size-xxl;
+                }
 
-                    .perks {
-                        margin-bottom: 25px;
-
-                        .subtitle {
-                            color: $color-text-primary;
-                            margin-bottom: 15px;
-                        }
-
-                        .perk {
-                            display: list-item;
-                            list-style-type: disc;
-                            list-style-position: inside;
-                            line-height: 30px;
-                            font-size: $font-size-xs-1;
-                            font-weight: $font-weight-regular;
-                            color: $color-text-secondary;
-                        }
-                    }
+                .perk {
+                    display: list-item;
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    line-height: 30px;
+                    font-size: $font-size-xs-1;
+                    font-weight: $font-weight-regular;
+                    color: $color-text-secondary;
                 }
             }
         }
@@ -161,7 +113,7 @@
         color: $color-text-secondary;
     }
 
-    .rooms {
+    .cards {
         grid-template-columns: repeat(2, 1fr);
     }
 }

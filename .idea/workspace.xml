@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_hotel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/setupMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/setupMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hotels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_rooms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_room.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_room.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_rooms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hero.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/hotels.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hotels.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/reviews.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/reviews.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/rooms.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/rooms.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/hotel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/hotel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/room.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +250,7 @@
       <workItem from="1628254345069" duration="14960000" />
       <workItem from="1629649834663" duration="37467000" />
       <workItem from="1629846521660" duration="34588000" />
-      <workItem from="1630706097669" duration="12346000" />
+      <workItem from="1630706097669" duration="17363000" />
     </task>
     <servers />
   </component>

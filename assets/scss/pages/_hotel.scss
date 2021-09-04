@@ -1,0 +1,20 @@
+.hotel-page {
+
+    .section {
+        margin-bottom: 100px;
+
+        .section-title {
+            font-size: $font-size-xxl;
+            font-weight: $font-weight-bold;
+            color: $color-text-tertiary;
+            font-family: $font-family-headers;
+            display: block;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

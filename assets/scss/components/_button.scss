@@ -13,12 +13,18 @@
   transition: background-color 0.2s ease, color 0.2s ease;
   text-decoration: none;
 
+  &-small {
+    height: 40px;
+    line-height: 40px;
+    font-size: 11px;
+  }
+
   &-primary {
     @include button-variant($color-white, $color-primary, $color-primary);
   }
 
   &-secondary {
-    @include button-variant($color-white, $color-text-secondary, $color-text-secondary);
+    @include button-variant($color-white, $color-grey-2, $color-grey-2);
   }
 
   &-outline {
@@ -27,7 +33,7 @@
     }
 
     &-secondary {
-      @include button-outline-variant($color-text-secondary, $color-text-secondary);
+      @include button-outline-variant($color-grey-2, $color-grey-2);
     }
   }
 }

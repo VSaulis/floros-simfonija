@@ -1,24 +1,20 @@
-<div class="hotels">
+<div class="cards">
     {% for hotel in hotels %}
         {% if hotel.rooms | length > 0 %}
-            <div class="hotel">
-                <div class="hotel-content">
-                    <div class="image-container">
-                        {% set room = hotel.rooms|first %}
-                        {% if room %}
-                            <img class="image" alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}"/>
-                        {% endif %}
-                    </div>
-                    <div class="details">
-                        <h3 class="details-title">{{ hotel.title(app.request.locale) }}</h3>
-                        <div class="address-container">
+            <div class="card">
+                <div class="card-content">
+                    {% set room = hotel.rooms|first %}
+                    <img class="card-image" alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}"/>
+                    <div class="card-details">
+                        <h3 class="card-title">{{ hotel.title(app.request.locale) }}</h3>
+                        <div class="card-caption-container">
                             <i class="fa fa-map-marker"></i>
-                            <a target="_blank" href="https://www.google.lt/maps/place/{{ hotel.address }}" class="details-address">{{ hotel.address }}</a>
+                            <a target="_blank" href="https://www.google.lt/maps/place/{{ hotel.address }}" class="card-caption">{{ hotel.address }}</a>
                         </div>
-                        <p class="details-description">{{ hotel.description(app.request.locale) }}</p>
-                        <div class="actions">
-                            <span class="details-price">{{ hotel.minPrice | priceFormat }} - {{ hotel.maxPrice | priceFormat }}</span>
-                            <a href="{{ path('location hotel', {id: location.id, hotelId: hotel.id}) }}" class="button button-primary">{{ 'titles.rooms' | trans }} ({{ hotel.rooms | length }})</a>
+                        <p class="card-description">{{ hotel.description(app.request.locale) }}</p>
+                        <div class="card-footer">
+                            <span class="card-price">{{ hotel.minPrice | priceFormat }} - {{ hotel.maxPrice | priceFormat }}</span>
+                            <a href="{{ path('location hotel', {id: location.id, hotelId: hotel.id}) }}" class="button button-secondary button-small">{{ 'titles.rooms' | trans }} ({{ hotel.rooms | length }})</a>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,9 @@
 <div class="hero-container {{ hero_class is defined ? hero_class }}">
-    <img class="image" alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.first(), 'file') }}"/>
+    {% if hero_longitude is defined and hero_latitude is defined %}
+        <div id="map" data-longitude="{{ hero_longitude }}" data-latitude="{{ hero_latitude }}" class="hero-map"></div>
+    {% else %}
+        <img class="image" alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(location.photos.first(), 'file') }}"/>
+    {% endif %}
     <div class="container">
         {% if title is defined %}
             <h3 class="title">{{ title }}</h3>

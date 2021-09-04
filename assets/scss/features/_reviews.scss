@@ -18,9 +18,6 @@
 
         .swiper-slide {
             margin-bottom: 50px;
-            padding: 3px;
-            background-color: $color-light-grey;
-            border: 1px solid $color-light-grey-2;
             transform: scale(0.9);
             transition: all 0.3s ease-in-out;
 
@@ -29,15 +26,18 @@
             }
 
             .review {
-                display: flex;
-                border: 1px solid $color-light-grey-2;
-                align-items: center;
-                position: relative;
-                justify-items: center;
-                flex-direction: column;
-                padding: 30px;
                 height: 250px;
-                background-color: $color-white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex: auto;
+                padding: 10px 25px;
+
+                .card-details {
+                    display: flex;
+                    align-items: center;
+                }
 
                 .fa-quote-left {
                     position: absolute;
@@ -61,6 +61,7 @@
                     color: $color-text-primary;
                     display: block;
                     margin-bottom: 15px;
+                    text-align: center;
                 }
 
                 .review-description {

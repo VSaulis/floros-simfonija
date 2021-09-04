@@ -13,7 +13,7 @@
                         <h3 class="details-title">{{ hotel.title(app.request.locale) }}</h3>
                         <div class="address-container">
                             <i class="fa fa-map-marker"></i>
-                            <span class="details-address">{{ hotel.address }}</span>
+                            <a target="_blank" href="https://www.google.lt/maps/place/{{ hotel.address }}" class="details-address">{{ hotel.address }}</a>
                         </div>
                         <p class="details-description">{{ hotel.description(app.request.locale) }}</p>
                         <div class="actions">

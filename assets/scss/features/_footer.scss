@@ -87,24 +87,22 @@
                 }
             }
 
-            .subscribe-form {
-                display: flex;
-                align-content: center;
-                justify-content: center;
+            .links-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 10px;
 
-                .label {
-                    display: none;
-                }
+                .navigation-item {
+                    margin-left: 15px;
+                    line-height: 24px;
+                    display: list-item;
+                    color: rgba($color-white, 0.7);
+                    font-size: 13px;
+                    transition: color 0.2s ease;
 
-                .input {
-                    flex: 1;
-                    margin-right: 10px;
-                    border: 1px solid rgba($color-white, 0.1);
-                    background: rgba($color-white, 0.05);
-                    padding: 0 20px;
-                    height: 46px;
-                    color: $color-white;
-                    line-height: 46px;
+                    &:hover, &.active {
+                        color: $color-white;
+                    }
                 }
             }
 
@@ -121,6 +119,8 @@
                 font-size: 12px;
                 display: block;
                 line-height: 24px;
+                height: 72px;
+                overflow-y: hidden;
                 margin-bottom: 25px;
                 font-weight: $font-weight-regular;
                 color: rgba($color-white, 0.7);

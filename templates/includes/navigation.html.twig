@@ -4,27 +4,7 @@
             <a class="logo-container">
                 <img class="logo" alt="Floros simfonija" src="{{ asset('images/logo.jpg') }}"/>
             </a>
-            <div class="links-container">
-                <a href="{{ path('location home', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'home' %}active{% endif %}">{{ 'navigation.home' | trans }}</a>
-                {% if location.articles | length > 0 %}
-                    <a href="{{ path('location news', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'news' %}active{% endif %}">{{ 'navigation.news' | trans }}</a>
-                {% endif %}
-                {% if location.products | length > 0 %}
-                    <a href="{{ path('location menu', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'menu' %}active{% endif %}">{{ 'navigation.menu' | trans }}</a>
-                {% endif %}
-                {% if location.hotels | length > 0 %}
-                    {% for hotel in location.hotels %}
-                        <a href="{{ path('location hotel', {id: location.id, hotelId: hotel.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'hotel_' ~ hotel.id %}active{% endif %}">{{ hotel.title(app.request.locale) }}</a>
-                    {% endfor %}
-                {% endif %}
-                {% if location.banquetHalls | length > 0 %}
-                    <a href="{{ path('location banquet halls', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'banquet_halls' %}active{% endif %}">{{ 'navigation.banquet_halls' | trans }}</a>
-                {% endif %}
-                <a href="{{ path('location contacts', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'contacts' %}active{% endif %}">{{ 'navigation.contacts' | trans }}</a>
-                {% if location.galleries | length > 0 %}
-                    <a href="{{ path('location galleries', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'galleries' %}active{% endif %}">{{ 'navigation.galleries' | trans }}</a>
-                {% endif %}
-            </div>
+            {% include 'includes/links.html.twig' %}
         </nav>
     </div>
 </div>

@@ -12,7 +12,7 @@
         <div class="middle">
             <div class="content">
                 <h4 class="title">{{ 'footer.about_us' | trans }}</h4>
-                <p class="description">{{ 'footer.about_us_description' | trans }}</p>
+                <p class="description">{{ location.description(app.request.locale) | trans }}</p>
                 <a href="{{ path('location home', {id: location.id}) }}" class="link">{{ 'footer.read_more' | trans }}</a>
             </div>
             <div class="content">
@@ -28,19 +28,14 @@
                     </div>
                     <div class="contact">
                         <span class="label">{{ 'footer.address' | trans }}: </span>
-                        <a class="value" target="_blank" href="tel:+37063673520">{{ location.address }}</a>
+                        <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
                     </div>
                 </div>
                 <a href="{{ path('location contacts', {id: location.id}) }}" class="link">{{ 'footer.get_in_touch' | trans }}</a>
             </div>
             <div class="content">
-                <h4 class="title">{{ 'footer.subscribe' | trans }}</h4>
-                <p class="description">{{ 'footer.subscribe_description' | trans }}</p>
-                <form class="subscribe-form">
-                    <label class="label" for="email">{{ 'footer.email' | trans }}</label>
-                    <input placeholder="{{ 'footer.email' | trans }}" class="input" id="email" name="email">
-                    <button class="button button-primary">{{ 'footer.subscribe' | trans }}</button>
-                </form>
+                <h4 class="title">{{ 'footer.links' | trans }}</h4>
+                {% include 'includes/links.html.twig' %}
             </div>
         </div>
     </div>

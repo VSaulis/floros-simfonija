@@ -7,19 +7,21 @@
         <div class="container">
             <div class="categories">
                 {% for category in categories %}
-                    <div class="category">
-                        <h4 class="title">{{ category.title(app.request.locale) }}</h4>
-                    </div>
-                    <div class="products">
-                        {% for product in category.products %}
-                            <div class="product">
-                                <div class="details">
-                                    <h4 class="title">{{ product.title(app.request.locale) }}</h4>
-                                    <p class="description">{{ product.description(app.request.locale) }}</p>
+                    <div class="category frame">
+                        <h4 class="category-title">{{ category.title(app.request.locale) }}</h4>
+                        <div class="products">
+                            {% for product in category.products %}
+                                <div class="product">
+                                    <div class="details">
+                                        <h4 class="title">{{ product.title(app.request.locale) }}</h4>
+                                        {% if product.description(app.request.locale) %}
+                                            <p class="description">{{ product.description(app.request.locale) }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <span class="price">{{ product.price | priceFormat }}</span>
                                 </div>
-                                <span class="price">{{ product.price | priceFormat }}</span>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 {% endfor %}
             </div>

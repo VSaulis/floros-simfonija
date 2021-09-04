@@ -25,11 +25,13 @@
             </div>
             <div class="side">
                 <div class="map-container">
-                    <div id="map" data-longitude="{{ room.hotel.longitude }}" data-latitude="{{ room.hotel.latitude }}" class="map"></div>
-                    <div class="map-details">
-                        <h3 class="details-title">{{ room.hotel.title(app.request.locale) }}</h3>
-                        <p class="details-description">{{ room.hotel.address }}</p>
-                        <a target="_blank" href="#" class="button button-primary">{{ 'room.get_directions' | trans }}</a>
+                    <div class="map-content">
+                        <div id="map" data-longitude="{{ room.hotel.longitude }}" data-latitude="{{ room.hotel.latitude }}" class="map"></div>
+                        <div class="map-details">
+                            <h3 class="details-title">{{ room.hotel.title(app.request.locale) }}</h3>
+                            <p class="details-description">{{ room.hotel.address }}</p>
+                            <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="button button-primary">{{ 'room.get_directions' | trans }}</a>
+                        </div>
                     </div>
                 </div>
                 <div class="perks-container">

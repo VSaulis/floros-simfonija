@@ -27,7 +27,6 @@
                 .label {
                     font-size: 11px;
                     color: $color-white;
-                    font-weight: $font-weight-bold;
                     display: block;
                     margin-right: 10px;
                 }
@@ -35,11 +34,10 @@
                 .value {
                     display: block;
                     font-size: 11px;
-                    color: $color-white;
+                    color: rgba($color-white, 0.7);
 
                     &.active, &:hover {
                         color: $color-white;
-                        font-weight: $font-weight-bold;
                     }
                 }
             }

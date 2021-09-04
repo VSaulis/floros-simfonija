@@ -8,10 +8,10 @@
         font-size: $font-size-xs;
 
         .breadcrumb-link {
-            color: rgba($color-white, 0.8);
+            color: rgba($color-white, 0.7);
 
             &:after {
-                color: rgba($color-white, 0.8);
+                color: rgba($color-white, 0.7);
                 content: '/';
                 margin: 0 10px;
                 position: relative;

@@ -17,40 +17,45 @@
                 width: 100%;
                 margin-bottom: 25px;
                 border: 1px solid $color-light-grey-2;
+                background-color: $color-light-grey;
+                padding: 3px;
 
-                .map {
-                    height: 350px;
-                    width: 100%;
-                }
+                .map-content {
+                    background-color: $color-white;
+                    border: 1px solid $color-light-grey-2;
 
-                .map-details {
-                    background-color: $color-light-grey;
-                    padding: 20px;
-
-                    .details-title {
-                        display: block;
-                        color: $color-text-primary;
-                        font-size: $font-size-m;
-                        font-weight: $font-weight-semi-bold;
-                        margin-bottom: 5px;
+                    .map {
+                        height: 350px;
+                        width: 100%;
                     }
 
-                    .details-description {
-                        font-size: $font-size-xs;
-                        display: block;
-                        font-weight: $font-weight-regular;
-                        color: $color-text-secondary;
-                        margin-bottom: 15px;
+                    .map-details {
+                        background-color: $color-white;
+                        padding: 20px;
+
+                        .details-title {
+                            display: block;
+                            color: $color-text-primary;
+                            font-size: $font-size-m;
+                            font-weight: $font-weight-semi-bold;
+                            margin-bottom: 5px;
+                        }
+
+                        .details-description {
+                            font-size: $font-size-xs;
+                            display: block;
+                            font-weight: $font-weight-regular;
+                            color: $color-text-secondary;
+                            margin-bottom: 15px;
+                        }
                     }
                 }
             }
 
             .perks-container {
-                top: 15px;
-                position: sticky;
                 border: 1px solid $color-light-grey-2;
                 background-color: $color-light-grey;
-                padding: 5px;
+                padding: 3px;
 
                 .perks-content {
                     background-color: $color-white;

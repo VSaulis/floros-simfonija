@@ -2,49 +2,175 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/ArticlePhoto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/ArticleTranslation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/ArticlePhotoType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/Type/ArticleTranslationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ArticleRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/news-article.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/news.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/floros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/floros.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/features/_frame.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/includes/links.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/setupMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/setupMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/setupMasonry.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/setupMasonry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_breadcrumbs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hotels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_hotels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_locales.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_locales.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/pages/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210824073402.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210824075642.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210903232540.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210825071739.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210826211151.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210827141208.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210827141425.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210903231402.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/products/610d6648c5275698291969.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/products/610d6648caa6f609291143.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_room.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_room.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/articles/612f8a0e1ae56999458433.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/articles/612f8a0e20648090376535.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5cbf46547590054.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5cbf46547590054.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5cfe9d157015692.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5cfe9d157015692.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d0e83544138788.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d0e83544138788.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d1fec929450542.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d1fec929450542.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d3fa2706636993.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d3fa2706636993.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d5db3790824449.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d5db3790824449.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d69d7493896233.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d69d7493896233.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d7793814191032.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d7793814191032.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d8aa7127077853.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d8aa7127077853.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d9d6c703572577.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5d9d6c703572577.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5db0b0992156260.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5db0b0992156260.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dc207934812727.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dc207934812727.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dd078874125027.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dd078874125027.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dde3a704640023.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dde3a704640023.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5deb66475620015.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5deb66475620015.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dfc38426278103.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f5a5dfc38426278103.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78356938995022198.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78356938995022198.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835a11f147715463.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835a11f147715463.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835b072800107811.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835b072800107811.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835bf8a629716291.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835bf8a629716291.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835c99f886691350.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835c99f886691350.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835d71d962408657.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835d71d962408657.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835e526155646692.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835e526155646692.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835f538750302072.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7835f538750302072.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78360b6c934161406.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78360b6c934161406.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78361f54697626480.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78361f54697626480.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783630f5913193290.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783630f5913193290.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7836422d823190806.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f7836422d823190806.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783650d5424611195.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f783650d5424611195.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78366028991541712.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78366028991541712.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78367140917270020.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/banquet-halls/6128f78367140917270020.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e164ec951903273724.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e164ec951903273724.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e164f08a1210320723.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e164f08a1210320723.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e164f1ac5186656420.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e164f1ac5186656420.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e164f2dc0979327674.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e164f2dc0979327674.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e164f40c9030241880.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e164f40c9030241880.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e165011f2247897162.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e165011f2247897162.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16502351251724068.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16502351251724068.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16503598562165065.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16503598562165065.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e165048cf126174736.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e165048cf126174736.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16505a4a882761449.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16505a4a882761449.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16506c12881570806.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16506c12881570806.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16507dcc762329789.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16507dcc762329789.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e1650905e885746706.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e1650905e885746706.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e1650f2b5968582614.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e1650f2b5968582614.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e165106db669424506.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e165106db669424506.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e165114a3594727820.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e165114a3594727820.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e165127a9934061432.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e165127a9934061432.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e16513d67125125726.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e16513d67125125726.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00cae7433737931.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00cae7433737931.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00e875730826148.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00e875730826148.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00f202277368135.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00f202277368135.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00f8af343103612.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00f8af343103612.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00ff96160520292.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a00ff96160520292.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a01075b656622627.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a01075b656622627.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/galleries/6123e5a010de8761549225.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/galleries/6123e5a010de8761549225.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128327489203959488378.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128327489203959488378.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/612833878efa5832862496.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/612833878efa5832862496.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/61283387917ee062981914.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/61283387917ee062981914.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/612834949d8df067351692.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/612834949d8df067351692.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/61283494a02ad033876357.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/61283494a02ad033876357.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128f81c6ebb6030101483.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128f81c6ebb6030101483.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128f81c73a23270203071.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128f81c73a23270203071.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128f933d6ca9535307142.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128f933d6ca9535307142.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128f933dab15459009388.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128f933dab15459009388.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128ffc601794473511153.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128ffc601794473511153.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/locations/6128ffc6073aa293863485.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/locations/6128ffc6073aa293863485.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172d7270514168358.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172d7270514168358.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172db1b9401882489.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172db1b9401882489.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172dbca0809419602.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172dbca0809419602.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172dc63a708061180.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172dc63a708061180.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172dd4a9779231487.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172dd4a9779231487.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172ddef5668828545.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172ddef5668828545.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228172de95f852942374.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228172de95f852942374.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448e4fa4377639873.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448e4fa4377639873.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448e7ec9859453898.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448e7ec9859453898.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448e8e46685373389.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448e8e46685373389.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448e9bb0741920271.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448e9bb0741920271.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448eaa75301088130.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448eaa75301088130.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448eb9c2030484340.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448eb9c2030484340.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448ecb76473645934.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448ecb76473645934.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448ed9dc555786250.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448ed9dc555786250.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448eed3f079296988.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448eed3f079296988.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448f02f5333537161.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448f02f5333537161.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228448f1bb6711199249.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228448f1bb6711199249.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612286696da52562313734.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612286696da52562313734.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122866970815211623107.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122866970815211623107.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612286697155e491014795.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612286697155e491014795.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228669727bd939304429.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228669727bd939304429.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228669737e1574306594.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228669737e1574306594.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731afc0d868595933.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731afc0d868595933.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731b425d266845239.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731b425d266845239.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731b63bc847484787.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731b63bc847484787.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731b79fe184029108.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731b79fe184029108.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731b946b488731503.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731b946b488731503.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731baa75670253832.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731baa75670253832.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731bbf8a213777155.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731bbf8a213777155.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731bd42d664562924.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731bd42d664562924.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731bec30166985220.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731bec30166985220.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228731c0174207277537.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228731c0174207277537.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d0b45b425193404.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d0b45b425193404.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d0e13f979167190.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d0e13f979167190.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d0ee25739523763.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d0ee25739523763.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d0f7e2371881712.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d0f7e2371881712.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d10378359628785.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d10378359628785.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d10f45620013381.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d10f45620013381.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d11b63625094679.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d11b63625094679.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d128b7203276592.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d128b7203276592.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d13d5f607229217.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d13d5f607229217.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/6122882d17807356635312.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/6122882d17807356635312.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c8eb942722894713.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c8eb942722894713.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c8efefa132227401.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c8efefa132227401.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c8f18b4369618001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c8f18b4369618001.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c8f3314755578678.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c8f3314755578678.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c900c34073259936.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c900c34073259936.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c90229a679131732.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c90229a679131732.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c903967513084296.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c903967513084296.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c905057102131392.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c905057102131392.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c9065b8383373555.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c9065b8383373555.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/612289c90851d996764164.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/612289c90851d996764164.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acd9ecae052050042.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acd9ecae052050042.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acda3c35417239071.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acda3c35417239071.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acda550d714217566.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acda550d714217566.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acda6d90786569363.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acda6d90786569363.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acda8400078907028.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acda8400078907028.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acda9447739477312.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acda9447739477312.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acdaa706131719982.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acdaa706131719982.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228acdabab9878150786.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228acdabab9878150786.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99e6328057982379.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99e6328057982379.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99eaec0204349025.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99eaec0204349025.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99eced8579898359.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99eced8579898359.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99eee12005878972.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99eee12005878972.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99f0867151345058.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99f0867151345058.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99f2676505874508.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99f2676505874508.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b99f3f26238891656.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b99f3f26238891656.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228b9a01771275195363.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228b9a01771275195363.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c7004bc5849250624.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c7004bc5849250624.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c7009322749523993.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c7009322749523993.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c700b08a736498851.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c700b08a736498851.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c700d0d8967411948.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c700d0d8967411948.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c700ebe2471702678.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c700ebe2471702678.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c7010aff208095177.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c7010aff208095177.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c7012460602499503.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c7012460602499503.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/rooms/61228c701428d860050700.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/rooms/61228c701428d860050700.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductCategoryTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductCategoryTranslation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPhoto.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductTranslation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/ProductCategoryTranslationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/ProductCategoryTranslationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Type/ProductPhotoType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Util/BreadcrumbsHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/BreadcrumbsHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/hotels.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hotels.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navigation.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/admin.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/admin.lt.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/room.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +400,7 @@
       <workItem from="1628254345069" duration="14960000" />
       <workItem from="1629649834663" duration="37467000" />
       <workItem from="1629846521660" duration="34588000" />
-      <workItem from="1630706097669" duration="5442000" />
+      <workItem from="1630706097669" duration="12213000" />
     </task>
     <servers />
   </component>

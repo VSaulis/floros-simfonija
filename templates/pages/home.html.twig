@@ -5,31 +5,25 @@
 {% block main %}
     <div class="home-page">
         <div class="container sections">
-            <section class="section">
+            <section class="section frame">
                 {% include 'includes/about-us-widget.html.twig' with {location: location} %}
             </section>
             {% if hotels | length > 0 %}
-                <section class="section">
-                    <div class="section-top-right"></div>
-                    <div class="section-bottom-left"></div>
+                <section class="section frame">
                     <span class="section-caption">{{ 'home.find_place_to_stay' | trans }}</span>
                     <h2 class="section-title">{{ 'titles.hotels' | trans }}</h2>
                     {% include 'includes/hotels.html.twig' with {hotels: hotels} %}
                 </section>
             {% endif %}
             {% if banquetHalls | length > 0 %}
-                <section class="section">
-                    <div class="section-top-right"></div>
-                    <div class="section-bottom-left"></div>
+                <section class="section frame">
                     <span class="section-caption">{{ 'home.find_place_to_celebrate' | trans }}</span>
                     <h2 class="section-title">{{ 'titles.banquet_halls' | trans }}</h2>
                     {% include 'includes/banquet-halls.html.twig' with {banquetHalls: banquetHalls} %}
                 </section>
             {% endif %}
             {% if galleries | length > 0 %}
-                <section class="section">
-                    <div class="section-top-left"></div>
-                    <div class="section-bottom-right"></div>
+                <section class="section frame">
                     <span class="section-caption">{{ 'home.look_around_from_home' | trans }}</span>
                     <h2 class="section-title">{{ 'titles.galleries' | trans }}</h2>
                     {% include 'includes/galleries.html.twig' with {galleries: galleries} %}

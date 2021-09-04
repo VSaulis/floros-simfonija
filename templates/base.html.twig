@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="module" src="https://js.api.here.com/v3/3.1/mapsjs.bundle.js"></script>
     <title>{% block title %}{{ title }} | Floros simfonija{% endblock %}</title>
     {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
-{{ encore_entry_script_tags('app') }}
-{% block javascripts %}{% endblock %}
+    {% block body %}{% endblock %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvs1Fgcu3mY3tzJwx0AjXmVMMnh5WAfiA&libraries=&v=weekly" async></script>
+    {% block javascripts %}{% endblock %}
 </body>
 </html>

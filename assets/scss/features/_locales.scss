@@ -12,12 +12,11 @@
 
     .locale-item {
       font-size: 11px;
-      color: $color-white;
+      color: rgba($color-white, 0.7);
       display: block;
 
       &.active, &:hover {
         color: $color-white;
-        font-weight: $font-weight-bold;
       }
     }
   }

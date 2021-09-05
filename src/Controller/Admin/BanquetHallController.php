@@ -8,11 +8,13 @@ use App\Entity\BanquetHallTranslation;
 use App\Form\Type\BanquetHallPhotoType;
 use App\Form\Type\BanquetHallTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -39,7 +41,11 @@ class BanquetHallController extends AbstractCrudController
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
             ->setEntityLabelInSingular('buttons.banquet_hall')
             ->setEntityLabelInPlural('titles.banquet_halls')
-            ->setSearchFields(['id', 'created', 'updated']);
+            ->setSearchFields(['id', 'created', 'updated'])
+            ->setFormOptions(
+                ['validation_groups' => []],
+                ['validation_groups' => ['edit']]
+            );
     }
 
     public function createEntity(string $entityFqcn): BanquetHall
@@ -61,6 +67,11 @@ class BanquetHallController extends AbstractCrudController
         return $banquetHall;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
@@ -71,29 +82,25 @@ class BanquetHallController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
-        yield AssociationField::new('location', 'labels.location');
-
-        yield IntegerField::new('peopleCount', 'labels.people_count');
-
-        yield DateTimeField::new('updated', 'labels.updated')
-            ->hideOnForm()
-            ->formatValue(function ($value) {
-                return DateUtils::formatDateTime($value);
-            });
-
         yield DateTimeField::new('created', 'labels.created')
             ->hideOnForm()
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
 
-        yield CollectionField::new('translations', 'labels.translations')
+        yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
+        yield AssociationField::new('location', 'labels.location');
+        yield IntegerField::new('peopleCount', 'labels.people_count');
+
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
             ->onlyOnForms()
             ->allowAdd(false)
             ->allowDelete(false)
             ->setEntryType(BanquetHallTranslationType::class);
 
-        yield CollectionField::new('photos', 'labels.photos')
+        yield FormField::addPanel('labels.photos')->setCssClass('grid-layout');
+        yield CollectionField::new('photos', false)
             ->onlyOnForms()
             ->setEntryType(BanquetHallPhotoType::class);
     }

@@ -8,6 +8,7 @@ use App\Entity\RoomTranslation;
 use App\Form\Type\RoomPhotoType;
 use App\Form\Type\RoomTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -43,7 +44,11 @@ class RoomController extends AbstractCrudController
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
             ->setEntityLabelInSingular('buttons.room')
             ->setEntityLabelInPlural('titles.rooms')
-            ->setSearchFields(['id', 'created', 'updated']);
+            ->setSearchFields(['id', 'created', 'updated'])
+            ->setFormOptions(
+                ['validation_groups' => []],
+                ['validation_groups' => ['edit']]
+            );
     }
 
     public function createEntity(string $entityFqcn): Room
@@ -65,6 +70,11 @@ class RoomController extends AbstractCrudController
         return $room;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
@@ -75,39 +85,31 @@ class RoomController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield MoneyField::new('price', 'labels.price')
             ->setStoredAsCents(false)
             ->setCurrency('EUR');
-
         yield AssociationField::new('hotel', 'labels.hotel');
-
-        yield AssociationField::new('perks', 'labels.perks')
-            ->onlyOnForms();
-
         yield UrlField::new('orderUrl', 'labels.order_url')->onlyOnForms();
-
         yield IntegerField::new('peopleCount', 'labels.people_count');
+        yield AssociationField::new('perks', 'labels.perks')->onlyOnForms();
 
-        yield DateTimeField::new('updated', 'labels.updated')
-            ->hideOnForm()
-            ->formatValue(function ($value) {
-                return DateUtils::formatDateTime($value);
-            });
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
+            ->onlyOnForms()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->setEntryType(RoomTranslationType::class);
+
+        yield FormField::addPanel('labels.photos')->setCssClass('grid-layout');
+        yield CollectionField::new('photos', false)
+            ->onlyOnForms()
+            ->setEntryType(RoomPhotoType::class);
 
         yield DateTimeField::new('created', 'labels.created')
             ->hideOnForm()
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
-
-        yield CollectionField::new('translations', 'labels.translations')
-            ->onlyOnForms()
-            ->allowAdd(false)
-            ->allowDelete(false)
-            ->setEntryType(RoomTranslationType::class);
-
-        yield CollectionField::new('photos', 'labels.photos')
-            ->onlyOnForms()
-            ->setEntryType(RoomPhotoType::class);
     }
 }

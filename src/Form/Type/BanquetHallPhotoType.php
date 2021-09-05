@@ -19,7 +19,7 @@ class BanquetHallPhotoType extends AbstractType
             ])
             ->add('file', VichImageType::class, [
                 'allow_delete' => false,
-                'label' => 'labels.photo'
+                'label' => false
             ]);
     }
 

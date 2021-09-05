@@ -7,11 +7,13 @@ use App\Entity\ProductCategory;
 use App\Entity\ProductCategoryTranslation;
 use App\Form\Type\ProductCategoryTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -51,21 +53,20 @@ class ProductCategoryController extends AbstractCrudController
         return $productCategory;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield AssociationField::new('parent', 'labels.parent_category');
         yield AssociationField::new('children', 'labels.children')->hideOnForm();
-
-        yield CollectionField::new('translations', 'labels.translations')
-            ->onlyOnForms()
-            ->allowAdd(false)
-            ->allowDelete(false)
-            ->setEntryType(ProductCategoryTranslationType::class);
-
         yield DateTimeField::new('updated', 'labels.updated')
             ->hideOnForm()
             ->formatValue(function ($value) {
@@ -77,5 +78,12 @@ class ProductCategoryController extends AbstractCrudController
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
+
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
+            ->onlyOnForms()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->setEntryType(ProductCategoryTranslationType::class);
     }
 }

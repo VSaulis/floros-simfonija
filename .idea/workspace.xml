@@ -2,25 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/pages/_hotel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/scss/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_grid-layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_inputs-layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/scss/features/_money-input.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/setupMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/setupMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/components/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_hotels.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_reviews.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_rooms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_room.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_room.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_rooms.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/hero.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hero.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/hotels.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/hotels.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/reviews.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/reviews.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/rooms.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/rooms.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/hotel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/hotel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/room.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/room.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210903231402.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210905204554.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210903232540.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/BanquetHallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/BanquetHallController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/GalleryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/HotelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/HotelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/LocationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ReviewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RoomPerkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RoomPerkController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/LocationPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/LocationPhoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/ArticlePhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/ArticlePhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/BanquetHallPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/BanquetHallPhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/GalleryPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/GalleryPhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/LocationPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/LocationPhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Type/RoomPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Type/RoomPhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/admin.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/admin.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/messages.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +207,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/themeforest-OmhTDwBK-restabook-restaurant-cafe-pub-template/restabook/light" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -223,11 +232,11 @@
       <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\client\scss" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\admin\scss\features" />
+      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets\admin\scss" />
       <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Form\Type" />
       <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates" />
       <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\src\Controller" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\assets" />
-      <recent name="C:\Users\vytautas.saulis\Desktop\Side\floros\templates\client\pages" />
     </key>
   </component>
   <component name="RunManager">
@@ -250,7 +259,9 @@
       <workItem from="1628254345069" duration="14960000" />
       <workItem from="1629649834663" duration="37467000" />
       <workItem from="1629846521660" duration="34588000" />
-      <workItem from="1630706097669" duration="17363000" />
+      <workItem from="1630706097669" duration="17737000" />
+      <workItem from="1630873159639" duration="52000" />
+      <workItem from="1630873540532" duration="7696000" />
     </task>
     <servers />
   </component>

@@ -21,8 +21,8 @@ labels:
     category: Kategorija
     longitude: Ilguma
     latitude: Platuma
-    hotels: Viešbučiai
-    hotel: Viešbutis
+    hotels: Svečių namai
+    hotel: Svečių namai
     rooms: Kambariai
     room: Kambarys
     rating: Įvertinimas
@@ -39,6 +39,14 @@ labels:
     products: Produktai
     parent_category: Tėvinė kategorija
     children: Subkategorijos
+    company_name: Įmonės pavadinimas
+    company_code: Įmonės kodas
+    company_vat: Įmonės PVM kodas
+    company_iban: Įmonės sąskaita
+    company_bank: Įmonės bankas
+    company_details: Įmonės duomenys
+    social_media: Socialiniai tinklai
+    main_details: Pagrindiniai duomenys
 
 titles:
     login: Prisijungimas
@@ -49,7 +57,7 @@ titles:
     admin: Administratoriaus panelė
     perks: Privalumai
     galleries: Galerijos
-    hotels: Viešbučiai
+    hotels: Svečių namai
     accommodation: Apgyvendinimas
     menu: Meniu
     reviews: Atsiliepimai
@@ -59,7 +67,7 @@ titles:
 
 buttons:
     login: Prisijungti
-    hotel: viešbutį
+    hotel: svečių namus
     location: lokaciją
     room: kambarį
     perk: privalumą

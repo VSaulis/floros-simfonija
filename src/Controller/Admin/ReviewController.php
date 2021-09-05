@@ -43,12 +43,6 @@ class ReviewController extends AbstractCrudController
         yield NumberField::new('rating', 'labels.rating');
         yield TextareaField::new('description', 'labels.description')->onlyOnForms();
 
-        yield DateTimeField::new('updated', 'labels.updated')
-            ->hideOnForm()
-            ->formatValue(function ($value) {
-                return DateUtils::formatDateTime($value);
-            });
-
         yield DateTimeField::new('created', 'labels.created')
             ->hideOnForm()
             ->formatValue(function ($value) {

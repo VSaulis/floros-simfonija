@@ -23,7 +23,7 @@ class LocationPhoto
     private $id;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
+     * @Assert\NotBlank(message="field_is_required", groups={"edit"})
      * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="photos")
      * @ORM\JoinColumn(nullable=false)
      */

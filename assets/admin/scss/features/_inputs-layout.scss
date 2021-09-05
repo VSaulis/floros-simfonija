@@ -1,0 +1,38 @@
+.inputs-layout {
+    .content-panel-body {
+        padding: 25px 15px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 20px;
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            .form-widget {
+                flex: 1;
+                display: flex;
+            }
+
+            .form-select, .datetime-widget, input {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            label {
+                white-space: nowrap;
+                width: 150px;
+                margin: 0;
+                display: block;
+                align-self: flex-start;
+                line-height: 30px;
+                flex: auto;
+                flex-grow: 0;
+                text-align: left;
+            }
+        }
+    }
+}

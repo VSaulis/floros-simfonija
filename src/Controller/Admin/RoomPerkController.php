@@ -7,6 +7,7 @@ use App\Entity\RoomPerk;
 use App\Entity\RoomPerkTranslation;
 use App\Form\Type\RoomPerkTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -51,11 +52,23 @@ class RoomPerkController extends AbstractCrudController
         return $roomPerk;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
+
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
+            ->onlyOnForms()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->setEntryType(RoomPerkTranslationType::class);
 
         yield DateTimeField::new('updated', 'labels.updated')
             ->hideOnForm()
@@ -68,11 +81,5 @@ class RoomPerkController extends AbstractCrudController
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
-
-        yield CollectionField::new('translations', 'labels.translations')
-            ->onlyOnForms()
-            ->allowAdd(false)
-            ->allowDelete(false)
-            ->setEntryType(RoomPerkTranslationType::class);
     }
 }

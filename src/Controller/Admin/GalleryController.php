@@ -10,11 +10,13 @@ use App\Form\Type\GalleryTranslationType;
 use App\Form\Type\ProductPhotoType;
 use App\Form\Type\ProductTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -40,7 +42,11 @@ class GalleryController extends AbstractCrudController
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
             ->setEntityLabelInSingular('buttons.gallery')
             ->setEntityLabelInPlural('titles.galleries')
-            ->setSearchFields(['id', 'created', 'updated']);
+            ->setSearchFields(['id', 'created', 'updated'])
+            ->setFormOptions(
+                ['validation_groups' => []],
+                ['validation_groups' => ['edit']]
+            );
     }
 
     public function createEntity(string $entityFqcn): Gallery
@@ -62,6 +68,11 @@ class GalleryController extends AbstractCrudController
         return $gallery;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
@@ -72,9 +83,21 @@ class GalleryController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield AssociationField::new('location', 'labels.location');
-
         yield AssociationField::new('photos', 'labels.photos')->onlyOnIndex();
+
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
+            ->onlyOnForms()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->setEntryType(GalleryTranslationType::class);
+
+        yield FormField::addPanel('labels.photos')->setCssClass('grid-layout');
+        yield CollectionField::new('photos', false)
+            ->onlyOnForms()
+            ->setEntryType(GalleryPhotoType::class);
 
         yield DateTimeField::new('updated', 'labels.updated')
             ->hideOnForm()
@@ -87,15 +110,5 @@ class GalleryController extends AbstractCrudController
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
-
-        yield CollectionField::new('translations', 'labels.translations')
-            ->onlyOnForms()
-            ->allowAdd(false)
-            ->allowDelete(false)
-            ->setEntryType(GalleryTranslationType::class);
-
-        yield CollectionField::new('photos', 'labels.photos')
-            ->onlyOnForms()
-            ->setEntryType(GalleryPhotoType::class);
     }
 }

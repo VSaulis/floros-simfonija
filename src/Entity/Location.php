@@ -26,6 +26,36 @@ class Location
      * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="string")
      */
+    private $companyName;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $companyCode;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $companyVAT;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $companyIban;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $companyBank;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
     private $address;
 
     /**
@@ -369,6 +399,56 @@ class Location
     public function setArticles(ArrayCollection $articles): void
     {
         $this->articles = $articles;
+    }
+
+    public function getCompanyName()
+    {
+        return $this->companyName;
+    }
+
+    public function setCompanyName($companyName): void
+    {
+        $this->companyName = $companyName;
+    }
+
+    public function getCompanyCode()
+    {
+        return $this->companyCode;
+    }
+
+    public function setCompanyCode($companyCode): void
+    {
+        $this->companyCode = $companyCode;
+    }
+
+    public function getCompanyVAT()
+    {
+        return $this->companyVAT;
+    }
+
+    public function setCompanyVAT($companyVAT): void
+    {
+        $this->companyVAT = $companyVAT;
+    }
+
+    public function getCompanyIban()
+    {
+        return $this->companyIban;
+    }
+
+    public function setCompanyIban($companyIban): void
+    {
+        $this->companyIban = $companyIban;
+    }
+
+    public function getCompanyBank()
+    {
+        return $this->companyBank;
+    }
+
+    public function setCompanyBank($companyBank): void
+    {
+        $this->companyBank = $companyBank;
     }
 
     public function getUpdated()

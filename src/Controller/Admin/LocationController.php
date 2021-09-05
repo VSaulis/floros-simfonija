@@ -8,10 +8,12 @@ use App\Entity\LocationTranslation;
 use App\Form\Type\LocationPhotoType;
 use App\Form\Type\LocationTranslationType;
 use App\Util\DateUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -38,7 +40,11 @@ class LocationController extends AbstractCrudController
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
             ->setEntityLabelInSingular('buttons.location')
             ->setEntityLabelInPlural('titles.locations')
-            ->setSearchFields(['id', 'created', 'updated']);
+            ->setSearchFields(['id', 'created', 'updated'])
+            ->setFormOptions(
+                ['validation_groups' => []],
+                ['validation_groups' => ['edit']]
+            );
     }
 
     public function createEntity(string $entityFqcn): Location
@@ -60,6 +66,11 @@ class LocationController extends AbstractCrudController
         return $location;
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets->addWebpackEncoreEntry('admin');
+    }
+
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
@@ -70,11 +81,33 @@ class LocationController extends AbstractCrudController
 
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
+        yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield TextField::new('address', 'labels.address')->onlyOnForms();
         yield TextField::new('email', 'labels.email')->onlyOnForms();
         yield TextField::new('phone', 'labels.phone')->onlyOnForms();
+
+        yield FormField::addPanel('labels.social_media')->setCssClass('inputs-layout');
         yield UrlField::new('facebook', 'labels.facebook')->onlyOnForms();
         yield UrlField::new('instagram', 'labels.instagram')->onlyOnForms();
+
+        yield FormField::addPanel('labels.company_details')->setCssClass('inputs-layout');
+        yield TextField::new('companyName', 'labels.company_name')->onlyOnForms();
+        yield TextField::new('companyCode', 'labels.company_code')->onlyOnForms();
+        yield TextField::new('companyVAT', 'labels.company_vat')->onlyOnForms();
+        yield TextField::new('companyIban', 'labels.company_iban')->onlyOnForms();
+        yield TextField::new('companyBank', 'labels.company_bank')->onlyOnForms();
+
+        yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
+        yield CollectionField::new('translations', false)
+            ->onlyOnForms()
+            ->allowAdd(false)
+            ->allowDelete(false)
+            ->setEntryType(LocationTranslationType::class);
+
+        yield FormField::addPanel('labels.photos')->setCssClass('grid-layout');
+        yield CollectionField::new('photos', false)
+            ->onlyOnForms()
+            ->setEntryType(LocationPhotoType::class);
 
         yield DateTimeField::new('updated', 'labels.updated')
             ->hideOnForm()
@@ -87,15 +120,5 @@ class LocationController extends AbstractCrudController
             ->formatValue(function ($value) {
                 return DateUtils::formatDateTime($value);
             });
-
-        yield CollectionField::new('translations', 'labels.translations')
-            ->onlyOnForms()
-            ->allowAdd(false)
-            ->allowDelete(false)
-            ->setEntryType(LocationTranslationType::class);
-
-        yield CollectionField::new('photos', 'labels.photos')
-            ->onlyOnForms()
-            ->setEntryType(LocationPhotoType::class);
     }
 }

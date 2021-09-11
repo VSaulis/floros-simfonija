@@ -47,6 +47,7 @@ labels:
     company_details: Įmonės duomenys
     social_media: Socialiniai tinklai
     main_details: Pagrindiniai duomenys
+    logo: Logotipas
 
 titles:
     login: Prisijungimas

@@ -22,9 +22,32 @@
                 </div>
             </div>
             <div class="side">
-                <div class="perks-container">
-                    <div class="perks-content">
-
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details">
+                            <h4 class="card-title">{{ 'titles.contact_details' | trans }}</h4>
+                            <div class="details">
+                                <div class="labels-container">
+                                    <span class="label">{{ 'labels.email' | trans }}: </span>
+                                    <span class="label">{{ 'labels.phone' | trans }}: </span>
+                                    <span class="label">{{ 'labels.address' | trans }}: </span>
+                                </div>
+                                <div class="values-container">
+                                    <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
+                                    <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
+                                    <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details perks">
+                            <h3 class="card-title">{{ 'titles.details' | trans }}</h3>
+                            <span class="details-item">{{ 'labels.people_count' | trans }}: {{ banquetHall.peopleCount }}</span>
+                            <a class="button button-primary button-small" target="_blank" href="mailto:{{ location.email }}">{{ 'room.book' | trans }}</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -16,26 +16,39 @@
                 <a href="{{ path('location home', {id: location.id}) }}" class="link">{{ 'footer.read_more' | trans }}</a>
             </div>
             <div class="content">
-                <h4 class="title">{{ 'footer.contact_info' | trans }}</h4>
-                <div class="contacts">
-                    <div class="contact">
-                        <span class="label">{{ 'footer.email' | trans }}: </span>
+                <h4 class="title">{{ 'titles.contact_details' | trans }}</h4>
+                <div class="content-details">
+                    <div class="labels-container">
+                        <span class="label">{{ 'labels.email' | trans }}: </span>
+                        <span class="label">{{ 'labels.phone' | trans }}: </span>
+                        <span class="label">{{ 'labels.address' | trans }}: </span>
+                    </div>
+                    <div class="values-container">
                         <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
-                    </div>
-                    <div class="contact">
-                        <span class="label">{{ 'footer.phone' | trans }}: </span>
                         <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
-                    </div>
-                    <div class="contact">
-                        <span class="label">{{ 'footer.address' | trans }}: </span>
                         <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
                     </div>
                 </div>
                 <a href="{{ path('location contacts', {id: location.id}) }}" class="link">{{ 'footer.get_in_touch' | trans }}</a>
             </div>
             <div class="content">
-                <h4 class="title">{{ 'footer.links' | trans }}</h4>
-                {% include 'includes/links.html.twig' %}
+                <h4 class="title">{{ 'footer.details' | trans }}</h4>
+                <div class="content-details">
+                    <div class="labels-container">
+                        <span class="label">{{ 'labels.company_name' | trans }}: </span>
+                        <span class="label">{{ 'labels.company_code' | trans }}: </span>
+                        <span class="label">{{ 'labels.company_vat' | trans }}: </span>
+                        <span class="label">{{ 'labels.company_iban' | trans }}: </span>
+                        <span class="label">{{ 'labels.company_bank' | trans }}: </span>
+                    </div>
+                    <div class="values-container">
+                        <span class="value">{{ location.companyName }}</span>
+                        <span class="value">{{ location.companyCode }}</span>
+                        <span class="value">{{ location.companyVAT }}</span>
+                        <span class="value">{{ location.companyIban }}</span>
+                        <span class="value">{{ location.companyBank }}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

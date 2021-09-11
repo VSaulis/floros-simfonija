@@ -4,7 +4,7 @@
 
     .top {
         width: 100%;
-        padding: 25px 0;
+        padding: 10px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -16,10 +16,12 @@
             justify-content: center;
 
             .logo-container {
-                margin-right: 25px;
+                margin-right: 15px;
+                position: relative;
+                left: -10px;
 
                 .logo {
-                    height: 25px;
+                    height: 70px;
                     width: auto;
                     display: block;
                 }
@@ -50,60 +52,15 @@
         padding: 60px 0;
 
         .content {
-            flex: 1;
+            flex: 2;
             margin-right: 40px;
+
+            &:first-of-type {
+                flex: 3;
+            }
 
             &:last-of-type {
                 margin-right: 0;
-            }
-
-            .contacts {
-                margin-bottom: 25px;
-
-                .contact {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-
-                    .label {
-                        width: 80px;
-                        display: block;
-                        line-height: 24px;
-                        margin-right: 20px;
-                        color: $color-white;
-                        font-size: 13px;
-                    }
-
-                    .value {
-                        display: block;
-                        line-height: 24px;
-                        color: rgba($color-white, 0.7);
-                        font-size: 13px;
-
-                        &:hover {
-                            color: $color-white;
-                        }
-                    }
-                }
-            }
-
-            .links-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-column-gap: 10px;
-
-                .navigation-item {
-                    margin-left: 15px;
-                    line-height: 24px;
-                    display: list-item;
-                    color: rgba($color-white, 0.7);
-                    font-size: 13px;
-                    transition: color 0.2s ease;
-
-                    &:hover, &.active {
-                        color: $color-white;
-                    }
-                }
             }
 
             .title {
@@ -121,13 +78,13 @@
                 line-height: 24px;
                 height: 72px;
                 overflow-y: hidden;
-                margin-bottom: 25px;
                 font-weight: $font-weight-regular;
                 color: rgba($color-white, 0.7);
             }
 
             .link {
                 display: inline-block;
+                margin-top: 25px;
                 padding-bottom: 5px;
                 font-size: 14px;
                 color: $color-white;
@@ -137,6 +94,34 @@
 
                 &:hover {
                     color: $color-white;
+                }
+            }
+
+            .content-details {
+                display: flex;
+
+                .labels-container {
+                    margin-right: 20px;
+
+                    .label {
+                        display: block;
+                        line-height: 24px;
+                        color: $color-white;
+                        font-size: 13px;
+                    }
+                }
+
+                .values-container {
+                    .value {
+                        display: block;
+                        line-height: 24px;
+                        color: rgba($color-white, 0.7);
+                        font-size: 13px;
+                    }
+
+                    a.value:hover {
+                        color: $color-white;
+                    }
                 }
             }
         }

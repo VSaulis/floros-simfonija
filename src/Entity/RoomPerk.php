@@ -25,7 +25,7 @@ class RoomPerk
      * @ORM\ManyToMany(
      *     targetEntity="App\Entity\Room",
      *     mappedBy="perks",
-     *     cascade={"remove", "persist"}
+     *     cascade={"persist"}
      * )
      */
     private $rooms;

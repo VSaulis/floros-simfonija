@@ -41,6 +41,16 @@ class Hotel
     private $latitude;
 
     /**
+     * @ORM\OneToOne (
+     *     targetEntity="App\Entity\HotelLogo",
+     *     mappedBy="hotel",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"},
+     * )
+     */
+    private $logo;
+
+    /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\HotelTranslation",
      *     mappedBy="hotel",
@@ -222,6 +232,17 @@ class Hotel
         }
 
         return $maxPrice;
+    }
+
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(HotelLogo $logo): void
+    {
+        $logo->setHotel($this);
+        $this->logo = $logo;
     }
 
     public function getUpdated()

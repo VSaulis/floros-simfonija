@@ -13,45 +13,46 @@
         .side {
             width: 350px;
 
-            .perks-container {
-                top: 15px;
-                position: sticky;
-                border: 1px solid $color-light-grey-2;
-                background-color: $color-light-grey;
-                padding: 5px;
+            .card:not(:last-of-type) {
+                margin-bottom: 15px;
+            }
 
-                .perks-content {
-                    background-color: $color-white;
-                    border: 1px solid $color-light-grey-2;
-                    padding: 25px;
+            .perks {
+                .details-item {
+                    display: list-item;
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    line-height: 30px;
+                    font-size: $font-size-xs-1;
+                    font-weight: $font-weight-regular;
+                    color: $color-text-secondary;
+                }
 
-                    .price {
-                        font-size: 28px;
-                        color: $color-primary;
-                        font-weight: $font-weight-bold;
-                        font-family: $font-family-headers;
+                .button {
+                    margin-top: 15px;
+                }
+            }
+
+            .details {
+                display: flex;
+
+                .labels-container {
+                    margin-right: 20px;
+
+                    .label {
                         display: block;
-                        text-align: center;
-                        margin-bottom: 25px;
+                        line-height: 28px;
+                        color: $color-text-primary;
+                        font-size: $font-size-xs-1;
                     }
+                }
 
-                    .perks {
-                        margin-bottom: 25px;
-
-                        .subtitle {
-                            color: $color-text-primary;
-                            margin-bottom: 15px;
-                        }
-
-                        .perk {
-                            display: list-item;
-                            list-style-type: disc;
-                            list-style-position: inside;
-                            line-height: 30px;
-                            font-size: $font-size-xs-1;
-                            font-weight: $font-weight-regular;
-                            color: $color-text-secondary;
-                        }
+                .values-container {
+                    .value {
+                        display: block;
+                        line-height: 28px;
+                        color: $color-text-secondary;
+                        font-size: $font-size-xs-1;
                     }
                 }
             }

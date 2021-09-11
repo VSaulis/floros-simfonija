@@ -17,12 +17,28 @@
                 display: flex;
             }
 
-            .form-select, .datetime-widget, input {
+            .form-select, .datetime-widget, input, textarea {
                 width: 100%;
                 max-width: 350px;
             }
 
-            label {
+            .form-group {
+                label {
+                    display: none;
+                }
+
+                img {
+                    width: 100%;
+                    max-width: 350px;
+                    height: auto;
+                }
+
+                .form-widget {
+                    padding: 0;
+                }
+            }
+
+            label, legend {
                 white-space: nowrap;
                 width: 150px;
                 margin: 0;

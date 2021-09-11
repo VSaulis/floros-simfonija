@@ -4,6 +4,7 @@ parameters:
     galleries_photos_path: /uploads/galleries
     articles_photos_path: /uploads/articles
     banquet_halls_photos_path: /uploads/banquet-halls
+    hotels_logos_path: /uploads/hotels-logos
     locale: 'lt'
 
 services:
@@ -22,6 +23,10 @@ services:
     App\Controller\Admin\LocationController:
         arguments:
             - '%locations_photos_path%'
+
+    App\Controller\Admin\HotelController:
+        arguments:
+            - '%hotels_logos_path%'
 
     App\Controller\Admin\RoomController:
         arguments:

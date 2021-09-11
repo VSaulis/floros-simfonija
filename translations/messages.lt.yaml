@@ -1,3 +1,14 @@
+labels:
+    company_name: Įmonės pavadinimas
+    company_code: Įmonės kodas
+    company_iban: Įmonės sąskaita
+    company_bank: Bankas
+    company_vat: PVM kodas
+    email: El. paštas
+    phone: Telefonas
+    address: Adresas
+    people_count: Žmonių skaičius
+
 navigation:
     home: Pagrindinis puslapis
     about_us: Apie mus
@@ -10,6 +21,7 @@ navigation:
     news: Naujienos
 
 titles:
+    contact_details: Kontaktinė informacija
     home: Pagrindinis puslapis
     about_us: Apie mus
     menu: Meniu
@@ -25,6 +37,7 @@ titles:
     hotels: Svečių namai
     banquet_halls: Banketinės salės
     news: Naujienos
+    details: Informacija
 
 room:
     book: Užsakyti
@@ -46,33 +59,21 @@ home:
     look_around_from_home: Apsidairykite neišėję iš namų
     find_place_to_celebrate: Suraskite vietą atšvęsti
 
-header:
-    email: El. paštas
-    phone: Telefonas
 
 footer:
     follow_us: Mus sekite
     about_us: Apie mus
-    links: Nuorodos
-    about_us_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eaque ipsa quae ab illo inventore veritatis et quasi architecto.
-    contact_info: Kontaktinė informacija
-    subscribe: Prenumeruoti
     read_more: Skaityti daugiau
     get_in_touch: Susisiekti
-    email: El. paštas
-    phone: Telefonas
-    address: Adresas
     created_by: Sukurta
     all_rights_reserved: Visos teisės saugomos
-    subscribe_description: Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.
+    details: Rekvizitai
 
 contacts:
+    details: Rekvizitai
     send_message: Siųsti žinutę
     title: Kontaktai
-    caption: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     get_in_touch: Susisiekite
-    call_for_reservations: Skambinti dėl rezervacijų
-    work_hours: Darbo valandos
     get_in_touch_description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.
 
 message:

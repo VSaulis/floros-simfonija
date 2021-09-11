@@ -29,6 +29,9 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-details">
+                            {% if room.hotel.logo %}
+                                <img src="{{ vich_uploader_asset(room.hotel.logo, 'file') }}" class="card-logo" alt="{{ room.hotel.title(app.request.locale) }}"/>
+                            {% endif %}
                             <h3 class="card-title">{{ room.hotel.title(app.request.locale) }}</h3>
                             <div class="card-caption-container">
                                 <i class="fa fa-map-marker"></i>

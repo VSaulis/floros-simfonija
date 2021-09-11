@@ -88,7 +88,8 @@ class RoomController extends AbstractCrudController
         yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield MoneyField::new('price', 'labels.price')
             ->setStoredAsCents(false)
-            ->setCurrency('EUR');
+            ->setCurrency('EUR')
+            ->setCssClass('money-input');
         yield AssociationField::new('hotel', 'labels.hotel');
         yield UrlField::new('orderUrl', 'labels.order_url')->onlyOnForms();
         yield IntegerField::new('peopleCount', 'labels.people_count');

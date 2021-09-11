@@ -45,10 +45,48 @@
                     </div>
                 </form>
             </div>
-            <div class="hours">
-                <div class="details">
-                    <span class="caption">{{ 'contacts.call_for_reservations' | trans }}</span>
-                    <h4 class="title">{{ 'contacts.work_hours' | trans }}</h4>
+            <div class="side">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details">
+                            <h4 class="card-title">{{ 'titles.contact_details' | trans }}</h4>
+                            <div class="details">
+                                <div class="labels-container">
+                                    <span class="label">{{ 'labels.email' | trans }}: </span>
+                                    <span class="label">{{ 'labels.phone' | trans }}: </span>
+                                    <span class="label">{{ 'labels.address' | trans }}: </span>
+                                </div>
+                                <div class="values-container">
+                                    <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
+                                    <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
+                                    <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details">
+                            <h4 class="card-title">{{ 'contacts.details' | trans }}</h4>
+                            <div class="details">
+                                <div class="labels-container">
+                                    <span class="label">{{ 'labels.company_name' | trans }}: </span>
+                                    <span class="label">{{ 'labels.company_code' | trans }}: </span>
+                                    <span class="label">{{ 'labels.company_vat' | trans }}: </span>
+                                    <span class="label">{{ 'labels.company_iban' | trans }}: </span>
+                                    <span class="label">{{ 'labels.company_bank' | trans }}: </span>
+                                </div>
+                                <div class="values-container">
+                                    <span class="value">{{ location.companyName }}</span>
+                                    <span class="value">{{ location.companyCode }}</span>
+                                    <span class="value">{{ location.companyVAT }}</span>
+                                    <span class="value">{{ location.companyIban }}</span>
+                                    <span class="value">{{ location.companyBank }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

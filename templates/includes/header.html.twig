@@ -3,15 +3,15 @@
         {% include 'includes/locales.html.twig' %}
         <div class="contacts">
             <div class="contact">
-                <span class="label">{{ 'header.email' | trans }}: </span>
+                <span class="label">{{ 'labels.email' | trans }}: </span>
                 <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
             </div>
             <div class="contact">
-                <span class="label">{{ 'header.phone' | trans }}: </span>
+                <span class="label">{{ 'labels.phone' | trans }}: </span>
                 <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
             </div>
             <div class="contact">
-                <span class="label">{{ 'footer.address' | trans }}: </span>
+                <span class="label">{{ 'labels.address' | trans }}: </span>
                 <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
             </div>
         </div>

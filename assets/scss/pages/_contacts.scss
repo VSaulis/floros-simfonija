@@ -78,35 +78,34 @@
             }
         }
 
-        .hours {
-            width: 480px;
-            background-color: lighten($color-dark-brown, 5%);
-            padding: 30px;
+        .side {
+            width: 375px;
+
+            .card:not(:last-of-type) {
+                margin-bottom: 15px;
+            }
 
             .details {
-                background-color: $color-dark-brown;
-                border: 1px dashed rgba($color-white, 0.2);
-                padding: 20px;
+                display: flex;
 
-                .caption {
-                    font-family: $font-family-headers;
-                    color: $color-primary;
-                    font-style: italic;
-                    font-size: 18px;
-                    font-weight: $font-weight-medium;
-                    margin-bottom: 10px;
-                    display: block;
-                    text-align: center;
+                .labels-container {
+                    margin-right: 20px;
+
+                    .label {
+                        display: block;
+                        line-height: 28px;
+                        color: $color-text-primary;
+                        font-size: $font-size-xs-1;
+                    }
                 }
 
-                .title {
-                    font-family: $font-family-headers;
-                    color: $color-white;
-                    font-size: 30px;
-                    font-weight: $font-weight-medium;
-                    margin-bottom: 30px;
-                    display: block;
-                    text-align: center;
+                .values-container {
+                    .value {
+                        display: block;
+                        line-height: 28px;
+                        color: $color-text-secondary;
+                        font-size: $font-size-xs-1;
+                    }
                 }
             }
         }

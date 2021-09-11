@@ -7,8 +7,6 @@ use App\Entity\Gallery;
 use App\Entity\GalleryTranslation;
 use App\Form\Type\GalleryPhotoType;
 use App\Form\Type\GalleryTranslationType;
-use App\Form\Type\ProductPhotoType;
-use App\Form\Type\ProductTranslationType;
 use App\Util\DateUtils;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Constant\Locales;
 use App\Entity\Hotel;
 use App\Entity\HotelTranslation;
+use App\Form\Type\HotelLogoType;
 use App\Form\Type\HotelTranslationType;
 use App\Util\DateUtils;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -15,11 +16,19 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class HotelController extends AbstractCrudController
 {
+    private $photoPath;
+
+    public function __construct(string $photoPath)
+    {
+        $this->photoPath = $photoPath;
+    }
+
     public static function getEntityFqcn(): string
     {
         return Hotel::class;
@@ -62,6 +71,9 @@ class HotelController extends AbstractCrudController
     public function configureFields(string $pageName): Iterable
     {
         yield IdField::new('id', 'labels.id')->hideOnForm();
+        yield ImageField::new('logo.fileName', 'labels.logo')
+            ->setBasePath($this->photoPath)
+            ->hideOnForm();
         yield TextField::new('title', 'labels.title')->hideOnForm();
 
         yield FormField::addPanel('labels.company_details')->setCssClass('inputs-layout');
@@ -69,6 +81,7 @@ class HotelController extends AbstractCrudController
         yield NumberField::new('latitude', 'labels.latitude')->onlyOnForms();
         yield AssociationField::new('location', 'labels.location');
         yield TextField::new('address', 'labels.address');
+        yield TextField::new('logo', 'labels.logo')->setFormType(HotelLogoType::class)->onlyOnForms();
 
         yield AssociationField::new('rooms', 'labels.rooms')->onlyOnIndex();
 

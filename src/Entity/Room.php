@@ -40,6 +40,7 @@ class Room
     private $orderUrl;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\RoomTranslation",
      *     mappedBy="room",
@@ -50,6 +51,7 @@ class Room
     private $translations;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\RoomPhoto",
      *     mappedBy="room",

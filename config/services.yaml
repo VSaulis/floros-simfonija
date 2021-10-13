@@ -5,6 +5,7 @@ parameters:
     articles_photos_path: /uploads/articles
     banquet_halls_photos_path: /uploads/banquet-halls
     hotels_logos_path: /uploads/hotels-logos
+    hotels_photos_path: /uploads/hotels
     locale: 'lt'
 
 services:

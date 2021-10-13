@@ -15,6 +15,16 @@
 
             > div:first-of-type {
                 margin-bottom: 15px;
+
+                .card-caption-container {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+
+                    i {
+                        display: block;
+                        width: 15px;
+                    }
+                }
             }
 
             .perks {

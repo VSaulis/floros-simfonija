@@ -23,7 +23,6 @@ class Article
     private $id;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="boolean")
      */
     private $visible;
@@ -48,6 +47,7 @@ class Article
     private $location;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ArticleTranslation",
      *     mappedBy="article",
@@ -58,6 +58,7 @@ class Article
     private $translations;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ArticlePhoto",
      *     mappedBy="article",

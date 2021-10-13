@@ -30,6 +30,7 @@ class Gallery
     private $location;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\GalleryTranslation",
      *     mappedBy="gallery",
@@ -40,6 +41,7 @@ class Gallery
     private $translations;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\GalleryPhoto",
      *     mappedBy="gallery",

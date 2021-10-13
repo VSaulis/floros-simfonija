@@ -53,6 +53,7 @@ class Product
     private $price;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ProductTranslation",
      *     mappedBy="product",

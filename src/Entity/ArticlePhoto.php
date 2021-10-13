@@ -45,7 +45,7 @@ class ArticlePhoto
     private $fileSize;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
+     * @Assert\Expression("this.getFile() or this.getFileName()", message="field_is_required")
      * @Vich\UploadableField(mapping="articles_photos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;

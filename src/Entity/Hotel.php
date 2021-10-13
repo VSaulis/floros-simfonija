@@ -30,6 +30,30 @@ class Hotel
 
     /**
      * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $email;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $phone;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $facebook;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $instagram;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="decimal", precision=10, scale=7)
      */
     private $longitude;
@@ -41,6 +65,7 @@ class Hotel
     private $latitude;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToOne (
      *     targetEntity="App\Entity\HotelLogo",
      *     mappedBy="hotel",
@@ -51,6 +76,18 @@ class Hotel
     private $logo;
 
     /**
+     * @Assert\Valid
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\HotelPhoto",
+     *     mappedBy="hotel",
+     *     orphanRemoval=true,
+     *     cascade={"remove", "persist"}
+     * )
+     */
+    private $photos;
+
+    /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\HotelTranslation",
      *     mappedBy="hotel",
@@ -90,6 +127,7 @@ class Hotel
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->photos = new ArrayCollection();
         $this->rooms = new ArrayCollection();
     }
 
@@ -243,6 +281,77 @@ class Hotel
     {
         $logo->setHotel($this);
         $this->logo = $logo;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
+
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    public function setPhone($phone): void
+    {
+        $this->phone = $phone;
+    }
+
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    public function setFacebook($facebook): void
+    {
+        $this->facebook = $facebook;
+    }
+
+    public function getInstagram()
+    {
+        return $this->instagram;
+    }
+
+    public function setInstagram($instagram): void
+    {
+        $this->instagram = $instagram;
+    }
+
+    public function getPhotos(): Collection
+    {
+        return $this->photos;
+    }
+
+    public function setPhotos(ArrayCollection $photos): void
+    {
+        $this->photos = $photos;
+    }
+
+    public function addPhoto(HotelPhoto $photo)
+    {
+        $photo->setHotel($this);
+        $this->photos->add($photo);
+    }
+
+    public function removePhoto(HotelPhoto $photo)
+    {
+        $this->photos->removeElement($photo);
+    }
+
+    public function getFeaturedPhoto()
+    {
+        $predicate = function (HotelPhoto $photo) {
+            return $photo->getFeatured() == true;
+        };
+
+        $featuredPhoto = $this->photos->filter($predicate)->first();
+        return $featuredPhoto ? $featuredPhoto :  $this->photos->first();
     }
 
     public function getUpdated()

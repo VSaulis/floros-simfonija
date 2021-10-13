@@ -8,6 +8,7 @@ labels:
     phone: Telefonas
     address: Adresas
     people_count: Žmonių skaičius
+    from: nuo
 
 navigation:
     home: Pagrindinis puslapis

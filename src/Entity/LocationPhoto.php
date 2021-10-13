@@ -23,7 +23,7 @@ class LocationPhoto
     private $id;
 
     /**
-     * @Assert\NotBlank(message="field_is_required", groups={"edit"})
+     * @Assert\NotBlank(message="field_is_required")
      * @ORM\ManyToOne(targetEntity="App\Entity\Location", inversedBy="photos")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -45,7 +45,7 @@ class LocationPhoto
     private $fileSize;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
+     * @Assert\Expression("this.getFile() or this.getFileName()", message="field_is_required")
      * @Vich\UploadableField(mapping="locations_photos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;

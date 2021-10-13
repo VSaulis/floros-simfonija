@@ -232,11 +232,8 @@ class LocationController extends AbstractController
      */
     public function hotel(Location $location, Hotel $hotel, Request $request): Response
     {
-        $rooms = $this->roomRepository->findHotelRooms($hotel);
-
         return $this->render('pages/hotel.html.twig', [
             'location' => $location,
-            'rooms' => $rooms,
             'hotel' => $hotel,
             'breadcrumbs' => $this->breadcrumbsHelper->getHotelBreadcrumbs($location, $hotel, $request->getLocale())
         ]);

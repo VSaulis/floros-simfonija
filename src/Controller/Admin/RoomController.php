@@ -46,8 +46,8 @@ class RoomController extends AbstractCrudController
             ->setEntityLabelInPlural('titles.rooms')
             ->setSearchFields(['id', 'created', 'updated'])
             ->setFormOptions(
-                ['validation_groups' => []],
-                ['validation_groups' => ['edit']]
+                ['validation_groups' => ['add']],
+                ['validation_groups' => []]
             );
     }
 

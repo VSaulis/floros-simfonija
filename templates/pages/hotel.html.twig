@@ -6,10 +6,54 @@
 
 {% block main %}
     <div class="hotel-page">
+        <div class="container top-container">
+            <div class="content">
+                <h2 class="content-title">{{ hotel.title(app.request.locale) }}</h2>
+                <p class="description">{{ hotel.description(app.request.locale) }}</p>
+                <div id="images" class="images">
+                    <div data-src="{{ vich_uploader_asset(hotel.featuredPhoto, 'file') }}" class="image-container main-image">
+                        <img alt="{{ hotel.title(app.request.locale) }}" src="{{ vich_uploader_asset(hotel.featuredPhoto, 'file') }}"/>
+                    </div>
+                    <div class="thumbnails">
+                        {% for photo in hotel.photos %}
+                            <div data-src="{{ vich_uploader_asset(photo, 'file') }}" class="image-container thumbnail">
+                                <img alt="{{ hotel.title(app.request.locale) }}" src="{{ vich_uploader_asset(photo, 'file') }}"/>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-details">
+                            {% if hotel.logo %}
+                                <img src="{{ vich_uploader_asset(hotel.logo, 'file') }}" class="card-logo" alt="{{ hotel.title(app.request.locale) }}"/>
+                            {% endif %}
+                            <h3 class="card-title">{{ hotel.title(app.request.locale) }}</h3>
+                            <div class="card-caption-container">
+                                <i class="fa fa-map-marker"></i>
+                                <a target="_blank" href="https://www.google.lt/maps/place/{{ hotel.address }}" class="card-caption">{{ hotel.address }}</a>
+                            </div>
+                            <div class="card-caption-container">
+                                <i class="fa fa-envelope"></i>
+                                <a target="_blank" href="mailto:{{ hotel.email }}" class="card-caption">{{ hotel.email }}</a>
+                            </div>
+                            <div class="card-caption-container">
+                                <i class="fa fa-phone"></i>
+                                <a target="_blank" href="tel:{{ hotel.phone }}" class="card-caption">{{ hotel.phone }}</a>
+                            </div>
+                            <p class="card-description">{{ hotel.description(app.request.locale) }}</p>
+                            <a target="_blank" href="https://www.google.lt/maps/place/{{ hotel.address }}" class="button button-primary button-small">{{ 'room.get_directions' | trans }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container sections">
             <section class="section">
                 <h3 class="section-title">{{ 'titles.rooms' | trans }}</h3>
-                {% include 'includes/rooms.html.twig' with {rooms: rooms} %}
+                {% include 'includes/rooms.html.twig' with {rooms: hotel.rooms} %}
             </section>
         </div>
     </div>

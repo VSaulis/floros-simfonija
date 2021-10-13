@@ -13,7 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
  */
-class GalleryPhoto
+class HotelPhoto
 {
     /**
      * @ORM\Id
@@ -24,10 +24,10 @@ class GalleryPhoto
 
     /**
      * @Assert\NotBlank(message="field_is_required")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Gallery", inversedBy="photos")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Hotel", inversedBy="photos")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $gallery;
+    private $hotel;
 
     /**
      * @ORM\Column(type="boolean")
@@ -46,7 +46,7 @@ class GalleryPhoto
 
     /**
      * @Assert\Expression("this.getFile() or this.getFileName()", message="field_is_required")
-     * @Vich\UploadableField(mapping="galleries_photos", fileNameProperty="fileName", size="fileSize")
+     * @Vich\UploadableField(mapping="hotels_photos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;
 
@@ -117,17 +117,7 @@ class GalleryPhoto
         $this->fileSize = $fileSize;
     }
 
-    public function getGallery()
-    {
-        return $this->gallery;
-    }
-
-    public function setGallery($gallery): void
-    {
-        $this->gallery = $gallery;
-    }
-
-    public function getFeatured()
+    public function getFeatured(): bool
     {
         return $this->featured;
     }
@@ -135,6 +125,16 @@ class GalleryPhoto
     public function setFeatured($featured): void
     {
         $this->featured = $featured;
+    }
+
+    public function getHotel()
+    {
+        return $this->hotel;
+    }
+
+    public function setHotel($hotel): void
+    {
+        $this->hotel = $hotel;
     }
 
     public function getUpdated()

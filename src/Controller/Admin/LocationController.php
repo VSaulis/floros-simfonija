@@ -42,8 +42,8 @@ class LocationController extends AbstractCrudController
             ->setEntityLabelInPlural('titles.locations')
             ->setSearchFields(['id', 'created', 'updated'])
             ->setFormOptions(
-                ['validation_groups' => []],
-                ['validation_groups' => ['edit']]
+                ['validation_groups' => ['add']],
+                ['validation_groups' => []]
             );
     }
 

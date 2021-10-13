@@ -23,7 +23,7 @@ class HotelLogo
     private $id;
 
     /**
-     * @Assert\NotBlank(message="field_is_required", groups={"edit"})
+     * @Assert\NotBlank(message="field_is_required")
      * @ORM\OneToOne(targetEntity="App\Entity\Hotel", inversedBy="logo")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -40,7 +40,7 @@ class HotelLogo
     private $fileSize;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
+     * @Assert\Expression("this.getFile() or this.getFileName()", message="field_is_required")
      * @Vich\UploadableField(mapping="hotels_logos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;

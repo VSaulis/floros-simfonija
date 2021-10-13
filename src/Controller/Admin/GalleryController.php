@@ -42,8 +42,8 @@ class GalleryController extends AbstractCrudController
             ->setEntityLabelInPlural('titles.galleries')
             ->setSearchFields(['id', 'created', 'updated'])
             ->setFormOptions(
-                ['validation_groups' => []],
-                ['validation_groups' => ['edit']]
+                ['validation_groups' => ['add']],
+                ['validation_groups' => []]
             );
     }
 

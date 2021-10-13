@@ -11,7 +11,7 @@
                 <h2 class="content-title">{{ room.title(app.request.locale) }}</h2>
                 <p class="description">{{ room.description(app.request.locale) }}</p>
                 <div id="images" class="images">
-                    <div data-src="{{ vich_uploader_asset(room.photos.first(), 'file') }}" class="image-container main-image">
+                    <div data-src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}" class="image-container main-image">
                         <img alt="{{ room.title(app.request.locale) }}" src="{{ vich_uploader_asset(room.featuredPhoto, 'file') }}"/>
                     </div>
                     <div class="thumbnails">
@@ -36,6 +36,14 @@
                             <div class="card-caption-container">
                                 <i class="fa fa-map-marker"></i>
                                 <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="card-caption">{{ room.hotel.address }}</a>
+                            </div>
+                            <div class="card-caption-container">
+                                <i class="fa fa-envelope"></i>
+                                <a target="_blank" href="mailto:{{ room.hotel.email }}" class="card-caption">{{ room.hotel.email }}</a>
+                            </div>
+                            <div class="card-caption-container">
+                                <i class="fa fa-phone"></i>
+                                <a target="_blank" href="tel:{{ room.hotel.phone }}" class="card-caption">{{ room.hotel.phone }}</a>
                             </div>
                             <p class="card-description">{{ room.hotel.description(app.request.locale) }}</p>
                             <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="button button-primary button-small">{{ 'room.get_directions' | trans }}</a>

@@ -29,6 +29,7 @@ class BanquetHall
     private $peopleCount;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\BanquetHallTranslation",
      *     mappedBy="banquetHall",
@@ -39,6 +40,7 @@ class BanquetHall
     private $translations;
 
     /**
+     * @Assert\Valid
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\BanquetHallPhoto",
      *     mappedBy="banquetHall",

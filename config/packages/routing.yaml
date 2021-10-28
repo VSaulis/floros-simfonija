@@ -1,4 +1,5 @@
 framework:
+    esi: { enabled: true }
     router:
         utf8: true
 

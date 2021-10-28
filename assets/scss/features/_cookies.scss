@@ -1,0 +1,43 @@
+.ch-cookie-consent {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  border-top: 1px solid $color-grey;
+
+  &__title {
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    font-family: $font-family-base;
+  }
+
+  &__form {
+    margin-top: 0;
+  }
+
+  &__btn-group, &__btn-wrapper {
+    margin-bottom: 0 !important;
+  }
+
+  &__toggle-details {
+    display: none;
+  }
+
+  &__btn {
+    margin-right: 0 !important;
+    margin-left: 15px;
+    border-radius: 0;
+    font-family: $font-family-base;
+    font-weight: $font-weight-regular;
+    box-shadow: none;
+
+    @extend .button;
+    @extend .button-primary;
+
+    &--secondary {
+      @extend .button-secondary;
+    }
+  }
+}

@@ -17,6 +17,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class GalleryController extends AbstractCrudController
@@ -83,6 +84,7 @@ class GalleryController extends AbstractCrudController
 
         yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield AssociationField::new('location', 'labels.location');
+        yield IntegerField::new('position', 'labels.position')->onlyOnForms();
         yield AssociationField::new('photos', 'labels.photos')->onlyOnIndex();
 
         yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');

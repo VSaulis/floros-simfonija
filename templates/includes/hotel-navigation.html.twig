@@ -1,0 +1,11 @@
+<div class="hotel-navigation">
+    <div class="container">
+        <div class="navigation">
+            <div class="links">
+                <a href="{{ path('location hotel', {id: location.id, hotelId: hotel.id}) }}" class="navigation-item {% if hotel_navigation_active is defined and hotel_navigation_active == 'about' %}active{% endif %}">{{ 'navigation.about_hotel' | trans }}</a>
+                <a href="{{ path('location hotel rooms', {id: location.id, hotelId: hotel.id}) }}" class="navigation-item {% if hotel_navigation_active is defined and hotel_navigation_active == 'rooms' %}active{% endif %}">{{ 'navigation.rooms' | trans }}</a>
+                <a href="{{ path('location hotel terms and conditions', {id: location.id, hotelId: hotel.id}) }}" class="navigation-item {% if hotel_navigation_active is defined and hotel_navigation_active == 'termsAndConditions' %}active{% endif %}">{{ 'navigation.terms_and_conditions' | trans }}</a>
+            </div>
+        </div>
+    </div>
+</div>

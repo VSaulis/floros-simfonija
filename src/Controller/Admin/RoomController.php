@@ -94,6 +94,7 @@ class RoomController extends AbstractCrudController
         yield UrlField::new('orderUrl', 'labels.order_url')->onlyOnForms();
         yield IntegerField::new('peopleCount', 'labels.people_count');
         yield AssociationField::new('perks', 'labels.perks')->onlyOnForms();
+        yield IntegerField::new('position', 'labels.position')->onlyOnForms();
 
         yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
         yield CollectionField::new('translations', false)

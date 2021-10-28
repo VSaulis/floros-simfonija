@@ -48,6 +48,9 @@ labels:
     social_media: Socialiniai tinklai
     main_details: Pagrindiniai duomenys
     logo: Logotipas
+    position: Position
+    terms_and_conditions: Nuostatai
+    business_hours: Darbo laikas
 
 titles:
     login: Prisijungimas

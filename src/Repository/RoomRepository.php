@@ -17,8 +17,8 @@ class RoomRepository extends ServiceEntityRepository
     public function findHotelRooms(Hotel $hotel)
     {
         return $this->createQueryBuilder('room')
-            ->orderBy('room.created', 'desc')
             ->where('room.hotel = :hotel')
+            ->orderBy('room.position', 'asc')
             ->setParameter('hotel', $hotel)
             ->getQuery()
             ->getResult();
@@ -29,7 +29,7 @@ class RoomRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('room')
             ->where('room.hotel = :hotel')
             ->setParameter('hotel', $hotel)
-            ->orderBy('room.created', 'desc')
+            ->orderBy('room.position', 'asc')
             ->setFirstResult(0)
             ->setMaxResults(2)
             ->getQuery()

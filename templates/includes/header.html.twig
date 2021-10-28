@@ -14,6 +14,10 @@
                 <span class="label">{{ 'labels.address' | trans }}: </span>
                 <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
             </div>
+            <div class="contact">
+                <span class="label">{{ 'labels.business_hours' | trans }}: </span>
+                <span class="value">{{ location.businessHours }}</span>
+            </div>
         </div>
     </div>
 </header>

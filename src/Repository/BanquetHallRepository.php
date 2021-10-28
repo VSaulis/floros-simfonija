@@ -17,8 +17,8 @@ class BanquetHallRepository extends ServiceEntityRepository
     public function findLocationBanquetHalls(Location $location)
     {
         return $this->createQueryBuilder('banquet_hall')
-            ->orderBy('banquet_hall.created', 'desc')
             ->where('banquet_hall.location = :location')
+            ->orderBy('banquet_hall.position', 'asc')
             ->setParameter('location', $location)
             ->getQuery()
             ->getResult();

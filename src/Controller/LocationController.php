@@ -22,7 +22,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mime\Email;
 
 class LocationController extends AbstractController
 {
@@ -34,6 +36,7 @@ class LocationController extends AbstractController
     private $reviewRepository;
     private $banquetHallRepository;
     private $articleRepository;
+    private $mailer;
 
     public function __construct
     (
@@ -44,7 +47,8 @@ class LocationController extends AbstractController
         GalleryRepository $galleryRepository,
         HotelRepository $hotelRepository,
         BanquetHallRepository $banquetHallRepository,
-        ArticleRepository $articleRepository
+        ArticleRepository $articleRepository,
+        MailerInterface $mailer
     )
     {
         $this->roomRepository = $roomRepository;
@@ -55,6 +59,7 @@ class LocationController extends AbstractController
         $this->reviewRepository = $reviewRepository;
         $this->banquetHallRepository = $banquetHallRepository;
         $this->articleRepository = $articleRepository;
+        $this->mailer = $mailer;
     }
 
     /**
@@ -66,6 +71,7 @@ class LocationController extends AbstractController
     public function home(Location $location, Request $request): Response
     {
         $hotels = $this->hotelRepository->findLocationHotels($location);
+        $articles = $this->articleRepository->findLocationArticles($location);
         $galleries = $this->galleryRepository->findLocationGalleries($location);
         $reviews = $this->reviewRepository->findLocationReviews($location);
         $banquetHalls = $this->banquetHallRepository->findLocationBanquetHalls($location);
@@ -73,6 +79,7 @@ class LocationController extends AbstractController
         return $this->render('pages/home.html.twig', [
             'location' => $location,
             'hotels' => $hotels,
+            'articles' => $articles,
             'galleries' => $galleries,
             'reviews' => $reviews,
             'banquetHalls' => $banquetHalls,
@@ -93,6 +100,13 @@ class LocationController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $email = new Email();
+            $email->from("contacts@florossimfonijahotel.lt");
+            $email->to($location->getEmail());
+            $email->subject($message->getSubject());
+            $email->html($this->renderView('emails/contacts.html.twig', ['message' => $message]));
+            $this->mailer->send($email);
+
             return $this->redirectToRoute('location contacts', ['id' => $location->getId()]);
         }
 
@@ -236,6 +250,41 @@ class LocationController extends AbstractController
             'location' => $location,
             'hotel' => $hotel,
             'breadcrumbs' => $this->breadcrumbsHelper->getHotelBreadcrumbs($location, $hotel, $request->getLocale())
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/hotels/{hotelId}/rooms", name="location hotel rooms", requirements={"id"="\d+", "hotelId"="\d+"})
+     * @Entity("hotel", expr="repository.find(hotelId)")
+     * @param Location $location
+     * @param Hotel $hotel
+     * @param Request $request
+     * @return Response
+     */
+    public function hotelRooms(Location $location, Hotel $hotel, Request $request): Response
+    {
+        return $this->render('pages/rooms.html.twig', [
+            'location' => $location,
+            'hotel' => $hotel,
+            'rooms' => $hotel->getRooms(),
+            'breadcrumbs' => $this->breadcrumbsHelper->getHotelRoomsBreadcrumbs($location, $hotel, $request->getLocale())
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/hotels/{hotelId}/terms-and-conditions", name="location hotel terms and conditions", requirements={"id"="\d+", "hotelId"="\d+"})
+     * @Entity("hotel", expr="repository.find(hotelId)")
+     * @param Location $location
+     * @param Hotel $hotel
+     * @param Request $request
+     * @return Response
+     */
+    public function hotelTermsAndConditions(Location $location, Hotel $hotel, Request $request): Response
+    {
+        return $this->render('pages/terms-and-conditions.html.twig', [
+            'location' => $location,
+            'hotel' => $hotel,
+            'breadcrumbs' => $this->breadcrumbsHelper->getHotelTermsAndConditionsBreadcrumbs($location, $hotel, $request->getLocale())
         ]);
     }
 

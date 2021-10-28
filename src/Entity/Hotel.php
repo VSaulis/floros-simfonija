@@ -7,11 +7,13 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\HotelRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("location", "position")
  */
 class Hotel
 {
@@ -39,6 +41,12 @@ class Hotel
      * @ORM\Column(type="string")
      */
     private $phone;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
+    private $businessHours;
 
     /**
      * @Assert\NotBlank(message="field_is_required")
@@ -77,6 +85,7 @@ class Hotel
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\HotelPhoto",
      *     mappedBy="hotel",
@@ -98,6 +107,7 @@ class Hotel
     private $translations;
 
     /**
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Room",
      *     mappedBy="hotel",
@@ -113,6 +123,18 @@ class Hotel
      * @ORM\JoinColumn(nullable=false)
      */
     private $location;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="text")
+     */
+    private $termsAndConditions;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -347,11 +369,41 @@ class Hotel
     public function getFeaturedPhoto()
     {
         $predicate = function (HotelPhoto $photo) {
-            return $photo->getFeatured() == true;
+            return $photo->getPosition() == 1;
         };
 
         $featuredPhoto = $this->photos->filter($predicate)->first();
         return $featuredPhoto ? $featuredPhoto :  $this->photos->first();
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position): void
+    {
+        $this->position = $position;
+    }
+
+    public function getTermsAndConditions()
+    {
+        return $this->termsAndConditions;
+    }
+
+    public function setTermsAndConditions($termsAndConditions): void
+    {
+        $this->termsAndConditions = $termsAndConditions;
+    }
+
+    public function getBusinessHours()
+    {
+        return $this->businessHours;
+    }
+
+    public function setBusinessHours($businessHours): void
+    {
+        $this->businessHours = $businessHours;
     }
 
     public function getUpdated()

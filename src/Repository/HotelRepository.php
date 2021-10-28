@@ -17,8 +17,8 @@ class HotelRepository extends ServiceEntityRepository
     public function findLocationHotels(Location $location)
     {
         return $this->createQueryBuilder('hotel')
-            ->orderBy('hotel.created', 'desc')
             ->where('hotel.location = :location')
+            ->orderBy('hotel.position', 'asc')
             ->setParameter('location', $location)
             ->getQuery()
             ->getResult();

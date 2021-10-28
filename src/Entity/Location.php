@@ -7,11 +7,13 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LocationRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("position")
  */
 class Location
 {
@@ -62,6 +64,12 @@ class Location
      * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="string")
      */
+    private $businessHours;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="string")
+     */
     private $email;
 
     /**
@@ -106,6 +114,7 @@ class Location
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\BanquetHall",
      *     mappedBy="location",
@@ -117,6 +126,7 @@ class Location
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\LocationPhoto",
      *     mappedBy="location",
@@ -139,6 +149,7 @@ class Location
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"dateFrom" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Article",
      *     mappedBy="location",
@@ -150,6 +161,7 @@ class Location
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Hotel",
      *     mappedBy="location",
@@ -161,6 +173,7 @@ class Location
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Gallery",
      *     mappedBy="location",
@@ -169,6 +182,12 @@ class Location
      * )
      */
     private $galleries;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -309,7 +328,7 @@ class Location
     public function getFeaturedPhoto()
     {
         $predicate = function (LocationPhoto $photo) {
-            return $photo->getFeatured() == true;
+            return $photo->getPosition() == 1;
         };
 
         $featuredPhoto = $this->photos->filter($predicate)->first();
@@ -449,6 +468,26 @@ class Location
     public function setCompanyBank($companyBank): void
     {
         $this->companyBank = $companyBank;
+    }
+
+    public function getBusinessHours()
+    {
+        return $this->businessHours;
+    }
+
+    public function setBusinessHours($businessHours): void
+    {
+        $this->businessHours = $businessHours;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function getUpdated()

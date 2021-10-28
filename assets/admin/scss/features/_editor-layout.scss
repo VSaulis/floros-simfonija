@@ -1,0 +1,12 @@
+.editor-layout {
+    .form-group {
+        > label {
+            display: none;
+        }
+
+        .form-widget {
+            width: 100%;
+            flex: 1;
+        }
+    }
+}

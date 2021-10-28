@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -12,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @Vich\Uploadable
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("room", "position")
  */
 class RoomPhoto
 {
@@ -35,11 +37,6 @@ class RoomPhoto
     private $fileName;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $featured;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $fileSize;
@@ -51,6 +48,12 @@ class RoomPhoto
     private $file;
 
     /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated;
@@ -59,11 +62,6 @@ class RoomPhoto
      * @ORM\Column(type="datetime")
      */
     private $created;
-
-    public function __construct()
-    {
-        $this->featured = false;
-    }
 
     /**
      * @ORM\PrePersist
@@ -127,14 +125,14 @@ class RoomPhoto
         $this->room = $room;
     }
 
-    public function getFeatured()
+    public function getPosition()
     {
-        return $this->featured;
+        return $this->position;
     }
 
-    public function setFeatured($featured): void
+    public function setPosition($position): void
     {
-        $this->featured = $featured;
+        $this->position = $position;
     }
 
     public function getUpdated()

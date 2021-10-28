@@ -8,6 +8,13 @@
             <section class="section frame">
                 {% include 'includes/about-us-widget.html.twig' with {location: location} %}
             </section>
+            {% if articles | length > 0 %}
+                <section class="section frame">
+                    <span class="section-caption">{{ 'home.find_out_about_our_events' | trans }}</span>
+                    <h2 class="section-title">{{ 'titles.news' | trans }}</h2>
+                    {% include 'includes/news-articles.html.twig' with {articles: articles} %}
+                </section>
+            {% endif %}
             {% if hotels | length > 0 %}
                 <section class="section frame">
                     <span class="section-caption">{{ 'home.find_place_to_stay' | trans }}</span>

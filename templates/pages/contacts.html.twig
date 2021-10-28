@@ -7,8 +7,7 @@
         <div class="container">
             <div class="content">
                 <h2 class="title">{{ 'contacts.get_in_touch' | trans }}</h2>
-                <p class="description">{{ 'contacts.get_in_touch_description' | trans }}</p>
-                <form class="contacts-form">
+                <form method="post" class="contacts-form">
                     <div class="row">
                         <div class="form-group">
                             {{ form_label(form.name) }}
@@ -41,8 +40,9 @@
                         </div>
                     </div>
                     <div class="button-row">
-                        <button class="button button-primary">{{ 'contacts.send_message' | trans }}</button>
+                        <button type="submit" class="button button-primary">{{ 'contacts.send_message' | trans }}</button>
                     </div>
+                    {{ form_row(form._token) }}
                 </form>
             </div>
             <div class="side">
@@ -55,11 +55,13 @@
                                     <span class="label">{{ 'labels.email' | trans }}: </span>
                                     <span class="label">{{ 'labels.phone' | trans }}: </span>
                                     <span class="label">{{ 'labels.address' | trans }}: </span>
+                                    <span class="label">{{ 'labels.business_hours' | trans }}: </span>
                                 </div>
                                 <div class="values-container">
                                     <a class="value" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a>
                                     <a class="value" target="_blank" href="tel:{{ location.phone }}">{{ location.phone }}</a>
                                     <a class="value" target="_blank" href="https://www.google.lt/maps/place/{{ location.address }}">{{ location.address }}</a>
+                                    <span class="value">{{ location.businessHours }}</span>
                                 </div>
                             </div>
                         </div>

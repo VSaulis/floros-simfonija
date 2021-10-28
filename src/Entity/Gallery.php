@@ -7,11 +7,13 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\GalleryRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("location", "position")
  */
 class Gallery
 {
@@ -42,6 +44,7 @@ class Gallery
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\GalleryPhoto",
      *     mappedBy="gallery",
@@ -50,6 +53,12 @@ class Gallery
      * )
      */
     private $photos;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -154,7 +163,7 @@ class Gallery
     public function getFeaturedPhoto()
     {
         $predicate = function (GalleryPhoto $photo) {
-            return $photo->getFeatured() == true;
+            return $photo->getPosition() == 1;
         };
 
         $featuredPhoto = $this->photos->filter($predicate)->first();
@@ -169,6 +178,16 @@ class Gallery
     public function setLocation($location): void
     {
         $this->location = $location;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function getUpdated()

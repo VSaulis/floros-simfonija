@@ -14,8 +14,8 @@
     {% if location.banquetHalls | length > 0 %}
         <a href="{{ path('location banquet halls', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'banquet_halls' %}active{% endif %}">{{ 'navigation.banquet_halls' | trans }}</a>
     {% endif %}
-    <a href="{{ path('location contacts', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'contacts' %}active{% endif %}">{{ 'navigation.contacts' | trans }}</a>
     {% if location.galleries | length > 0 %}
         <a href="{{ path('location galleries', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'galleries' %}active{% endif %}">{{ 'navigation.galleries' | trans }}</a>
     {% endif %}
+    <a href="{{ path('location contacts', {id: location.id}) }}" class="navigation-item {% if navigation_active is defined and navigation_active == 'contacts' %}active{% endif %}">{{ 'navigation.contacts' | trans }}</a>
 </div>

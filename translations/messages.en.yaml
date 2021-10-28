@@ -37,8 +37,7 @@ contacts:
     get_in_touch: Get in touch
     call_for_reservations: Call for reservations
     work_hours: Work hours
-    get_in_touch_description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.
-
+    
 message:
     email: Email
     phone: Phone

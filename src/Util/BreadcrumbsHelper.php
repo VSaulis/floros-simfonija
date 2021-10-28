@@ -38,6 +38,10 @@ class BreadcrumbsHelper
                 'title' => $room->getHotel()->getTitle($locale)
             ],
             [
+                'link' => $this->router->generate('location hotel rooms', ['id' => $location->getId(), 'hotelId' => $room->getHotel()->getId()]),
+                'title' => $this->translator->trans('titles.rooms')
+            ],
+            [
                 'title' => $room->getTitle($locale)
             ]
         ];
@@ -56,6 +60,48 @@ class BreadcrumbsHelper
             ],
             [
                 'title' => $hotel->getTitle($locale)
+            ]
+        ];
+    }
+
+    public function getHotelRoomsBreadcrumbs(Location $location, Hotel $hotel, string $locale): array
+    {
+        return [
+            [
+                'link' => $this->router->generate('locations'),
+                'title' => $this->translator->trans('titles.locations')
+            ],
+            [
+                'link' => $this->router->generate('location home', ['id' => $location->getId()]),
+                'title' => $location->getTitle($locale)
+            ],
+            [
+                'link' => $this->router->generate('location hotel', ['id' => $location->getId(), 'hotelId' => $hotel->getId()]),
+                'title' => $hotel->getTitle($locale)
+            ],
+            [
+                'title' => $this->translator->trans('titles.rooms')
+            ]
+        ];
+    }
+
+    public function getHotelTermsAndConditionsBreadcrumbs(Location $location, Hotel $hotel, string $locale): array
+    {
+        return [
+            [
+                'link' => $this->router->generate('locations'),
+                'title' => $this->translator->trans('titles.locations')
+            ],
+            [
+                'link' => $this->router->generate('location home', ['id' => $location->getId()]),
+                'title' => $location->getTitle($locale)
+            ],
+            [
+                'link' => $this->router->generate('location hotel', ['id' => $location->getId(), 'hotelId' => $hotel->getId()]),
+                'title' => $hotel->getTitle($locale)
+            ],
+            [
+                'title' => $this->translator->trans('titles.terms_and_conditions')
             ]
         ];
     }

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -12,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @Vich\Uploadable
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("location", "position")
  */
 class LocationPhoto
 {
@@ -30,11 +32,6 @@ class LocationPhoto
     private $location;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $featured;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $fileName;
@@ -49,6 +46,12 @@ class LocationPhoto
      * @Vich\UploadableField(mapping="locations_photos", fileNameProperty="fileName", size="fileSize")
      */
     private $file;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -122,14 +125,14 @@ class LocationPhoto
         $this->location = $location;
     }
 
-    public function getFeatured()
+    public function getPosition()
     {
-        return $this->featured;
+        return $this->position;
     }
 
-    public function setFeatured($featured): void
+    public function setPosition($position): void
     {
-        $this->featured = $featured;
+        $this->position = $position;
     }
 
     public function getUpdated()

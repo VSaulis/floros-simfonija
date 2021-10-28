@@ -91,6 +91,7 @@ class BanquetHallController extends AbstractCrudController
         yield FormField::addPanel('labels.main_details')->setCssClass('inputs-layout');
         yield AssociationField::new('location', 'labels.location');
         yield IntegerField::new('peopleCount', 'labels.people_count');
+        yield IntegerField::new('position', 'labels.position')->onlyOnForms();
 
         yield FormField::addPanel('labels.translations')->setCssClass('grid-layout');
         yield CollectionField::new('translations', false)

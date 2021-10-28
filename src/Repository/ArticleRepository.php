@@ -17,8 +17,9 @@ class ArticleRepository extends ServiceEntityRepository
     public function findLocationArticles(Location $location)
     {
         return $this->createQueryBuilder('article')
-            ->orderBy('article.created', 'desc')
+            ->orderBy('article.dateFrom', 'desc')
             ->where('article.location = :location')
+            ->andWhere('article.visible = true')
             ->setParameter('location', $location)
             ->getQuery()
             ->getResult();
@@ -29,6 +30,7 @@ class ArticleRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('article')
             ->join('article.location', 'location')
             ->where('location.id = :locationId')
+            ->andWhere('article.visible = true')
             ->andWhere('article.id = :articleId')
             ->setParameter('articleId', $articleId)
             ->setParameter('locationId', $locationId)

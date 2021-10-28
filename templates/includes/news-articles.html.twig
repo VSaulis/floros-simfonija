@@ -1,0 +1,15 @@
+<div class="articles">
+    {% for article in articles %}
+        <div class="article">
+            <div class="images">
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(article.photos.get(0), 'file') }}" class="image"/>
+                <img alt="{{ location.title(app.request.locale) }}" src="{{ vich_uploader_asset(article.photos.get(1), 'file') }}" class="image"/>
+            </div>
+            <div class="details">
+                <h3 class="details-title">{{ article.title(app.request.locale) }}</h3>
+                <span class="details-date">{{ article.dateFrom | dateFormat }} - {{ article.dateTo | dateFormat }}</span>
+                <p class="details-description">{{ article.content(app.request.locale) }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>

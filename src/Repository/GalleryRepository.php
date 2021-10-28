@@ -17,8 +17,8 @@ class GalleryRepository extends ServiceEntityRepository
     public function findLocationGalleries(Location $location)
     {
         return $this->createQueryBuilder('gallery')
-            ->orderBy('gallery.created', 'desc')
             ->where('gallery.location = :location')
+            ->orderBy('gallery.position', 'asc')
             ->setParameter('location', $location)
             ->getQuery()
             ->getResult();
@@ -30,6 +30,7 @@ class GalleryRepository extends ServiceEntityRepository
             ->join('gallery.location', 'location')
             ->where('location.id = :locationId')
             ->andWhere('gallery.id = :galleryId')
+            ->orderBy('gallery.position', 'asc')
             ->setParameter('galleryId', $galleryId)
             ->setParameter('locationId', $locationId)
             ->getQuery()

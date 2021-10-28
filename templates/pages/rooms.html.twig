@@ -1,0 +1,21 @@
+{% extends 'layouts/page-layout.html.twig' %}
+{% set title = 'titles.rooms' | trans %}
+{% set hotel_navigation_active = 'rooms' %}
+{% set navigation_active = 'hotel_' ~ hotel.id %}
+{% set hero_longitude = hotel.longitude %}
+{% set hero_latitude = hotel.latitude %}
+
+{% block additional_hero %}
+    {% include 'includes/hotel-navigation.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <div class="hotel-page">
+        <div class="container sections">
+            <section class="section">
+                <h3 class="section-title">{{ 'titles.rooms' | trans }}</h3>
+                {% include 'includes/rooms.html.twig' %}
+            </section>
+        </div>
+    </div>
+{% endblock %}

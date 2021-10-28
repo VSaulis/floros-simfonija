@@ -16,6 +16,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
@@ -85,6 +86,8 @@ class LocationController extends AbstractCrudController
         yield TextField::new('address', 'labels.address')->onlyOnForms();
         yield TextField::new('email', 'labels.email')->onlyOnForms();
         yield TextField::new('phone', 'labels.phone')->onlyOnForms();
+        yield TextField::new('businessHours', 'labels.business_hours')->onlyOnForms();
+        yield IntegerField::new('position', 'labels.position')->onlyOnForms();
 
         yield FormField::addPanel('labels.social_media')->setCssClass('inputs-layout');
         yield UrlField::new('facebook', 'labels.facebook')->onlyOnForms();

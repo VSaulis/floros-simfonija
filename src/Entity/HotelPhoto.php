@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -12,6 +13,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @Vich\Uploadable
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("hotel", "position")
  */
 class HotelPhoto
 {
@@ -30,11 +32,6 @@ class HotelPhoto
     private $hotel;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $featured;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $fileName;
@@ -51,6 +48,12 @@ class HotelPhoto
     private $file;
 
     /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated;
@@ -59,11 +62,6 @@ class HotelPhoto
      * @ORM\Column(type="datetime")
      */
     private $created;
-
-    public function __construct()
-    {
-        $this->featured = false;
-    }
 
     /**
      * @ORM\PrePersist
@@ -117,16 +115,6 @@ class HotelPhoto
         $this->fileSize = $fileSize;
     }
 
-    public function getFeatured(): bool
-    {
-        return $this->featured;
-    }
-
-    public function setFeatured($featured): void
-    {
-        $this->featured = $featured;
-    }
-
     public function getHotel()
     {
         return $this->hotel;
@@ -135,6 +123,16 @@ class HotelPhoto
     public function setHotel($hotel): void
     {
         $this->hotel = $hotel;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function getUpdated()

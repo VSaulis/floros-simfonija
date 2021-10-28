@@ -59,6 +59,7 @@ class Article
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ArticlePhoto",
      *     mappedBy="article",
@@ -172,7 +173,7 @@ class Article
     public function getFeaturedPhoto()
     {
         $predicate = function (ArticlePhoto $photo) {
-            return $photo->getFeatured() == true;
+            return $photo->getPosition() == 1;
         };
 
         $featuredPhoto = $this->photos->filter($predicate)->first();

@@ -18,9 +18,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class HotelController extends AbstractCrudController
 {
@@ -43,6 +46,7 @@ class HotelController extends AbstractCrudController
             ->setDateTimeFormat('yyyy-MM-dd HH:mm:ss')
             ->setEntityLabelInSingular('buttons.hotel')
             ->setEntityLabelInPlural('titles.hotels')
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig')
             ->setSearchFields(['id', 'created', 'updated'])
             ->setFormOptions(
                 ['validation_groups' => ['add']],
@@ -88,6 +92,8 @@ class HotelController extends AbstractCrudController
         yield TextField::new('email', 'labels.email')->onlyOnForms();
         yield TextField::new('phone', 'labels.phone')->onlyOnForms();
         yield TextField::new('logo', 'labels.logo')->setFormType(HotelLogoType::class)->onlyOnForms();
+        yield TextField::new('businessHours', 'labels.business_hours')->onlyOnForms();
+        yield IntegerField::new('position', 'labels.position')->onlyOnForms();
 
         yield FormField::addPanel('labels.location')->setCssClass('inputs-layout');
         yield NumberField::new('longitude', 'labels.longitude')->onlyOnForms();
@@ -105,6 +111,11 @@ class HotelController extends AbstractCrudController
             ->allowAdd(false)
             ->allowDelete(false)
             ->setEntryType(HotelTranslationType::class);
+
+        yield FormField::addPanel('labels.terms_and_conditions')->setCssClass('editor-layout');
+        yield TextareaField::new('termsAndConditions', false)
+            ->onlyOnForms()
+            ->setFormType(CKEditorType::class);
 
         yield FormField::addPanel('labels.photos')->setCssClass('grid-layout');
         yield CollectionField::new('photos', false)

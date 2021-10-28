@@ -19,6 +19,7 @@ class ProductCategoryRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('product_category')
             ->leftJoin('product_category.products', 'products')
             ->where('products.location = :location')
+            ->andWhere('products.visible = true')
             ->setParameter('location', $location)
             ->getQuery()
             ->getResult();

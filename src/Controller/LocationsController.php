@@ -21,7 +21,7 @@ class LocationsController extends AbstractController
      */
     public function locations(): Response
     {
-        $locations = $this->locationRepository->findAll();
+        $locations = $this->locationRepository->findBy([], ['position' => 'asc']);
 
         return $this->render('pages/locations.html.twig', [
             'locations' => $locations

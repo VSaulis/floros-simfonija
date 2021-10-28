@@ -5,7 +5,7 @@
 {% block main %}
     <div class="news-page">
         <div class="container">
-
+            {% include 'includes/news-articles.html.twig' with {articles: articles} %}
         </div>
     </div>
 {% endblock %}

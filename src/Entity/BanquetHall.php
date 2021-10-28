@@ -7,11 +7,13 @@ use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BanquetHallRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity("location", "position")
  */
 class BanquetHall
 {
@@ -41,6 +43,7 @@ class BanquetHall
 
     /**
      * @Assert\Valid
+     * @ORM\OrderBy({"position" = "asc"})
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\BanquetHallPhoto",
      *     mappedBy="banquetHall",
@@ -56,6 +59,12 @@ class BanquetHall
      * @ORM\JoinColumn(nullable=false)
      */
     private $location;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="integer")
+     */
+    private $position;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -175,7 +184,7 @@ class BanquetHall
     public function getFeaturedPhoto()
     {
         $predicate = function (BanquetHallPhoto $photo) {
-            return $photo->getFeatured() == true;
+            return $photo->getPosition() == 1;
         };
 
         $featuredPhoto = $this->photos->filter($predicate)->first();
@@ -190,6 +199,16 @@ class BanquetHall
     public function setPeopleCount($peopleCount): void
     {
         $this->peopleCount = $peopleCount;
+    }
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position): void
+    {
+        $this->position = $position;
     }
 
     public function getUpdated()

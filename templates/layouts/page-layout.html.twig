@@ -5,6 +5,7 @@
         {% include 'includes/header.html.twig' %}
         {% include 'includes/navigation.html.twig' %}
         {% include 'includes/hero.html.twig' %}
+        {% block additional_hero %}{% endblock %}
         <div class="content">
             {% block main %}{% endblock %}
         </div>

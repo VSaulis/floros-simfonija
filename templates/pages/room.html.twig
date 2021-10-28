@@ -1,8 +1,13 @@
 {% extends 'layouts/page-layout.html.twig' %}
 {% set title = room.title(app.request.locale) %}
 {% set navigation_active = 'hotel_' ~ hotel.id %}
+{% set hotel_navigation_active = 'rooms' %}
 {% set hero_longitude = hotel.longitude %}
 {% set hero_latitude = hotel.latitude %}
+
+{% block additional_hero %}
+    {% include 'includes/hotel-navigation.html.twig' %}
+{% endblock %}
 
 {% block main %}
     <div class="room-page">
@@ -44,6 +49,10 @@
                             <div class="card-caption-container">
                                 <i class="fa fa-phone"></i>
                                 <a target="_blank" href="tel:{{ room.hotel.phone }}" class="card-caption">{{ room.hotel.phone }}</a>
+                            </div>
+                            <div class="card-caption-container">
+                                <i class="fa fa-clock-o"></i>
+                                <a class="card-caption">{{ room.hotel.businessHours }}</a>
                             </div>
                             <p class="card-description">{{ room.hotel.description(app.request.locale) }}</p>
                             <a target="_blank" href="https://www.google.lt/maps/place/{{ room.hotel.address }}" class="button button-primary button-small">{{ 'room.get_directions' | trans }}</a>

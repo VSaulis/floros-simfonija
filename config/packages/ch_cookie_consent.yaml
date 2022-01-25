@@ -1,0 +1,7 @@
+ch_cookie_consent:
+    theme: 'light'
+    categories: ['social_media']
+    use_logger: true
+    position: 'bottom'
+    simplified: true
+    http_only: true

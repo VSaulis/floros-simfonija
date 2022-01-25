@@ -6,11 +6,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="{{ asset('images/logo.jpg') }}"/>
     <title>{% block title %}{{ title }} | Floros simfonija{% endblock %}</title>
+    {% include "@CHCookieConsent/cookie_consent_styling.html.twig" %}
     {{ encore_entry_link_tags('app') }}
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
     {% block body %}{% endblock %}
+    {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set', { 'locale' : app.request.locale })) }}
     {{ encore_entry_script_tags('app') }}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvs1Fgcu3mY3tzJwx0AjXmVMMnh5WAfiA&libraries=&v=weekly" async></script>
     {% block javascripts %}{% endblock %}

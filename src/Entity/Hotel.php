@@ -26,6 +26,12 @@ class Hotel
 
     /**
      * @Assert\NotBlank(message="field_is_required")
+     * @ORM\Column(type="text")
+     */
+    private $pricesTable;
+
+    /**
+     * @Assert\NotBlank(message="field_is_required")
      * @ORM\Column(type="string")
      */
     private $address;
@@ -404,6 +410,16 @@ class Hotel
     public function setBusinessHours($businessHours): void
     {
         $this->businessHours = $businessHours;
+    }
+
+    public function getPricesTable()
+    {
+        return $this->pricesTable;
+    }
+
+    public function setPricesTable($pricesTable): void
+    {
+        $this->pricesTable = $pricesTable;
     }
 
     public function getUpdated()

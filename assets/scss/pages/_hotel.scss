@@ -38,6 +38,29 @@
         font-family: $font-family-headers;
     }
 
+    .prices-table {
+        margin-bottom: 10px;
+
+        table {
+            width: 100% !important;
+            border-color: $color-grey;
+            border-collapse: collapse;
+            font-size: $font-size-s;
+
+            thead {
+                background-color: $color-primary;
+
+                th {
+                    color: $color-white;
+                }
+            }
+
+            th, td {
+                padding: 10px 20px;
+            }
+        }
+    }
+
     .images {
         .image-container:hover {
             cursor: pointer;

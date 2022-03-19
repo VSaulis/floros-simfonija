@@ -95,6 +95,11 @@ class HotelController extends AbstractCrudController
         yield TextField::new('businessHours', 'labels.business_hours')->onlyOnForms();
         yield IntegerField::new('position', 'labels.position')->onlyOnForms();
 
+        yield FormField::addPanel('labels.prices_table')->setCssClass('editor-layout');
+        yield TextareaField::new('pricesTable', false)
+            ->onlyOnForms()
+            ->setFormType(CKEditorType::class);
+
         yield FormField::addPanel('labels.location')->setCssClass('inputs-layout');
         yield NumberField::new('longitude', 'labels.longitude')->onlyOnForms();
         yield NumberField::new('latitude', 'labels.latitude')->onlyOnForms();

@@ -101,7 +101,7 @@ class LocationController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $email = new Email();
-            $email->from("contacts@florossimfonijahotel.lt");
+            $email->from("susisiekite@florossimfonija.lt");
             $email->to($location->getEmail());
             $email->subject($message->getSubject());
             $email->html($this->renderView('emails/contacts.html.twig', ['message' => $message]));

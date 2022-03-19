@@ -51,6 +51,7 @@ labels:
     position: Position
     terms_and_conditions: Nuostatai
     business_hours: Darbo laikas
+    prices_table: Kainų lentelė
 
 titles:
     login: Prisijungimas

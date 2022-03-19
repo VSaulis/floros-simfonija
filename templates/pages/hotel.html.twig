@@ -15,6 +15,7 @@
             <div class="content">
                 <h2 class="content-title">{{ hotel.title(app.request.locale) }}</h2>
                 <p class="description">{{ hotel.description(app.request.locale) }}</p>
+                <div class="prices-table">{{ hotel.pricesTable | raw }}</div>
                 <div id="images" class="images">
                     <div data-src="{{ vich_uploader_asset(hotel.featuredPhoto, 'file') }}" class="image-container main-image">
                         <img alt="{{ hotel.title(app.request.locale) }}" src="{{ vich_uploader_asset(hotel.featuredPhoto, 'file') }}"/>

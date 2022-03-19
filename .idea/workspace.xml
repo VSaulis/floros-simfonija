@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cf5dd8-e034-440a-ae2a-4779cff7c9e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/scss/features/_cookies.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/ch_cookie_consent.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/ch_cookie_consent.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bundles/CHCookieConsentBundle/cookie_consent.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/CHCookieConsentBundle.lt.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/floros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/floros.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/features/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/features/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/layouts/_page-layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/layouts/_page-layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211025104500.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211025145810.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20211028221752.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20211025192405.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/pages/_hotel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_hotel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211028221752.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20220319092743.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/HotelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/HotelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Hotel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/includes/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.lt.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/hotel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/hotel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/admin.lt.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/admin.lt.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,6 +266,7 @@
       <workItem from="1635192112757" duration="117000" />
       <workItem from="1635341249248" duration="659000" />
       <workItem from="1635456828726" duration="2934000" />
+      <workItem from="1647681389659" duration="2287000" />
     </task>
     <servers />
   </component>
@@ -294,6 +283,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

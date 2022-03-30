@@ -25,8 +25,7 @@ class Hotel
     private $id;
 
     /**
-     * @Assert\NotBlank(message="field_is_required")
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $pricesTable;
 
